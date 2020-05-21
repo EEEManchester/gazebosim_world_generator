@@ -554,100 +554,6 @@
       </link>
     </model>
 <model name='unit_box_0'>
-<pose frame=''>-19.0 -4.0 0.5 0 -0 0</pose> 
-      <static>True</static>
-      <link name='link'>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <material>
-<ambient>0.3 0.3 0.3 1</ambient> 
-<diffuse>0.3 0.3 0.3 1</diffuse> 
-</material>        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-<model name='unit_box_1'>
-<pose frame=''>-19.0 -4.0 1.5 0 -0 0</pose> 
-      <static>True</static>
-      <link name='link'>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <material>
-<ambient>0.3 0.3 0.3 1</ambient> 
-<diffuse>0.3 0.3 0.3 1</diffuse> 
-</material>        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-<model name='unit_box_2'>
 <pose frame=''>-18.0 -4.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -694,7 +600,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_3'>
+<model name='unit_box_1'>
 <pose frame=''>-18.0 -4.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -741,7 +647,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_4'>
+<model name='unit_box_2'>
 <pose frame=''>-18.0 -4.0 2.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -788,7 +694,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_5'>
+<model name='unit_box_3'>
 <pose frame=''>-18.0 -3.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -835,7 +741,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_6'>
+<model name='unit_box_4'>
 <pose frame=''>-18.0 -3.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -882,7 +788,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_7'>
+<model name='unit_box_5'>
 <pose frame=''>-18.0 -3.0 2.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -929,148 +835,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_8'>
-<pose frame=''>-18.0 -2.0 0.5 0 -0 0</pose> 
-      <static>True</static>
-      <link name='link'>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <material>
-<ambient>0.3 0.3 0.3 1</ambient> 
-<diffuse>0.3 0.3 0.3 1</diffuse> 
-</material>        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-<model name='unit_box_9'>
-<pose frame=''>-18.0 -2.0 1.5 0 -0 0</pose> 
-      <static>True</static>
-      <link name='link'>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <material>
-<ambient>0.3 0.3 0.3 1</ambient> 
-<diffuse>0.3 0.3 0.3 1</diffuse> 
-</material>        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-<model name='unit_box_10'>
-<pose frame=''>-18.0 -2.0 2.5 0 -0 0</pose> 
-      <static>True</static>
-      <link name='link'>
-        <inertial>
-          <mass>100</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-<size>1.0 1.0 1.0</size> 
-</box>          </geometry>
-          <material>
-<ambient>0.3 0.3 0.3 1</ambient> 
-<diffuse>0.3 0.3 0.3 1</diffuse> 
-</material>        </visual>
-        <self_collide>0</self_collide>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
-<model name='unit_box_11'>
+<model name='unit_box_6'>
 <pose frame=''>-18.0 -1.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1117,7 +882,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_12'>
+<model name='unit_box_7'>
 <pose frame=''>-18.0 -1.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1164,7 +929,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_13'>
+<model name='unit_box_8'>
 <pose frame=''>-18.0 -1.0 2.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1211,7 +976,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_14'>
+<model name='unit_box_9'>
 <pose frame=''>-18.0 0.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1258,7 +1023,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_15'>
+<model name='unit_box_10'>
 <pose frame=''>-18.0 0.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1305,7 +1070,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_16'>
+<model name='unit_box_11'>
 <pose frame=''>-18.0 0.0 2.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1352,7 +1117,148 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_17'>
+<model name='unit_box_12'>
+<pose frame=''>-18.0 1.0 0.25 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+<size>0.5 0.5 0.5</size> 
+</box>          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+<size>0.5 0.5 0.5</size> 
+</box>          </geometry>
+          <material>
+<ambient>0.3 0.3 0.3 1</ambient> 
+<diffuse>0.3 0.3 0.3 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+<model name='unit_box_13'>
+<pose frame=''>-18.0 1.0 0.75 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+<size>0.5 0.5 0.5</size> 
+</box>          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+<size>0.5 0.5 0.5</size> 
+</box>          </geometry>
+          <material>
+<ambient>0.3 0.3 0.3 1</ambient> 
+<diffuse>0.3 0.3 0.3 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+<model name='unit_box_14'>
+<pose frame=''>-18.0 1.0 1.25 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+<size>0.5 0.5 0.5</size> 
+</box>          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+<size>0.5 0.5 0.5</size> 
+</box>          </geometry>
+          <material>
+<ambient>0.3 0.3 0.3 1</ambient> 
+<diffuse>0.3 0.3 0.3 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+<model name='unit_box_15'>
 <pose frame=''>-17.0 -4.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1399,7 +1305,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_18'>
+<model name='unit_box_16'>
 <pose frame=''>-17.0 -4.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1446,7 +1352,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_19'>
+<model name='unit_box_17'>
 <pose frame=''>-17.0 -4.0 2.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1493,7 +1399,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_20'>
+<model name='unit_box_18'>
 <pose frame=''>-17.0 -3.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1540,7 +1446,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_21'>
+<model name='unit_box_19'>
 <pose frame=''>-17.0 -3.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1587,7 +1493,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_22'>
+<model name='unit_box_20'>
 <pose frame=''>-17.0 -3.0 2.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1634,7 +1540,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_23'>
+<model name='unit_box_21'>
 <pose frame=''>-17.0 -2.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1681,7 +1587,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_24'>
+<model name='unit_box_22'>
 <pose frame=''>-17.0 -2.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1728,7 +1634,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_25'>
+<model name='unit_box_23'>
 <pose frame=''>-17.0 -2.0 2.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1775,7 +1681,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_26'>
+<model name='unit_box_24'>
 <pose frame=''>-17.0 -1.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1822,7 +1728,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_27'>
+<model name='unit_box_25'>
 <pose frame=''>-17.0 -1.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1869,7 +1775,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_28'>
+<model name='unit_box_26'>
 <pose frame=''>-17.0 -1.0 2.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1916,7 +1822,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_29'>
+<model name='unit_box_27'>
 <pose frame=''>-17.0 0.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -1963,7 +1869,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_30'>
+<model name='unit_box_28'>
 <pose frame=''>-17.0 0.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -2010,7 +1916,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_31'>
+<model name='unit_box_29'>
 <pose frame=''>-17.0 0.0 2.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -2057,8 +1963,8 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_32'>
-<pose frame=''>-16.0 0.0 0.5 0 -0 0</pose> 
+<model name='unit_box_30'>
+<pose frame=''>-16.0 -1.0 0.25 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -2075,7 +1981,7 @@
         <collision name='collision'>
           <geometry>
             <box>
-<size>1.0 1.0 1.0</size> 
+<size>0.5 0.5 0.5</size> 
 </box>          </geometry>
           <max_contacts>10</max_contacts>
           <surface>
@@ -2094,7 +2000,7 @@
         <visual name='visual'>
           <geometry>
             <box>
-<size>1.0 1.0 1.0</size> 
+<size>0.5 0.5 0.5</size> 
 </box>          </geometry>
           <material>
 <ambient>0.3 0.3 0.3 1</ambient> 
@@ -2104,7 +2010,7 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_33'>
+<model name='unit_box_31'>
 <pose frame=''>-15.0 -4.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -2151,8 +2057,102 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-<model name='unit_box_34'>
+<model name='unit_box_32'>
 <pose frame=''>-15.0 -4.0 1.5 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+<size>1.0 1.0 1.0</size> 
+</box>          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+<size>1.0 1.0 1.0</size> 
+</box>          </geometry>
+          <material>
+<ambient>0.3 0.3 0.3 1</ambient> 
+<diffuse>0.3 0.3 0.3 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+<model name='unit_box_33'>
+<pose frame=''>-15.0 -3.0 0.5 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+<size>1.0 1.0 1.0</size> 
+</box>          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+<size>1.0 1.0 1.0</size> 
+</box>          </geometry>
+          <material>
+<ambient>0.3 0.3 0.3 1</ambient> 
+<diffuse>0.3 0.3 0.3 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+<model name='unit_box_34'>
+<pose frame=''>-15.0 -3.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -2669,7 +2669,7 @@
       </link>
     </model>
 <model name='unit_box_45'>
-<pose frame=''>-14.0 -1.0 0.5 0 -0 0</pose> 
+<pose frame=''>-14.0 -2.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -2716,7 +2716,7 @@
       </link>
     </model>
 <model name='unit_box_46'>
-<pose frame=''>-14.0 -1.0 1.5 0 -0 0</pose> 
+<pose frame=''>-14.0 -2.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -2763,7 +2763,7 @@
       </link>
     </model>
 <model name='unit_box_47'>
-<pose frame=''>-14.0 0.0 0.5 0 -0 0</pose> 
+<pose frame=''>-14.0 -1.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -2810,7 +2810,7 @@
       </link>
     </model>
 <model name='unit_box_48'>
-<pose frame=''>-14.0 0.0 1.5 0 -0 0</pose> 
+<pose frame=''>-14.0 -1.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -2857,7 +2857,7 @@
       </link>
     </model>
 <model name='unit_box_49'>
-<pose frame=''>-12.0 -4.0 0.5 0 -0 0</pose> 
+<pose frame=''>-14.0 0.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -2904,7 +2904,7 @@
       </link>
     </model>
 <model name='unit_box_50'>
-<pose frame=''>-12.0 -3.0 0.5 0 -0 0</pose> 
+<pose frame=''>-14.0 0.0 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -2951,7 +2951,7 @@
       </link>
     </model>
 <model name='unit_box_51'>
-<pose frame=''>-12.0 -2.0 0.5 0 -0 0</pose> 
+<pose frame=''>-12.0 -4.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -2998,7 +2998,7 @@
       </link>
     </model>
 <model name='unit_box_52'>
-<pose frame=''>-12.0 -1.0 0.5 0 -0 0</pose> 
+<pose frame=''>-12.0 -3.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3045,7 +3045,7 @@
       </link>
     </model>
 <model name='unit_box_53'>
-<pose frame=''>-12.0 0.0 0.5 0 -0 0</pose> 
+<pose frame=''>-12.0 -2.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3092,7 +3092,7 @@
       </link>
     </model>
 <model name='unit_box_54'>
-<pose frame=''>-11.0 -4.0 0.5 0 -0 0</pose> 
+<pose frame=''>-12.0 0.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3139,7 +3139,7 @@
       </link>
     </model>
 <model name='unit_box_55'>
-<pose frame=''>-11.0 -3.0 0.5 0 -0 0</pose> 
+<pose frame=''>-11.0 -4.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3186,7 +3186,7 @@
       </link>
     </model>
 <model name='unit_box_56'>
-<pose frame=''>-11.0 -2.0 0.5 0 -0 0</pose> 
+<pose frame=''>-11.0 -3.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3233,7 +3233,7 @@
       </link>
     </model>
 <model name='unit_box_57'>
-<pose frame=''>-11.0 -1.0 0.5 0 -0 0</pose> 
+<pose frame=''>-11.0 -2.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3280,6 +3280,53 @@
       </link>
     </model>
 <model name='unit_box_58'>
+<pose frame=''>-11.0 -1.0 0.5 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+<size>1.0 1.0 1.0</size> 
+</box>          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+<size>1.0 1.0 1.0</size> 
+</box>          </geometry>
+          <material>
+<ambient>0.3 0.3 0.3 1</ambient> 
+<diffuse>0.3 0.3 0.3 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+<model name='unit_box_59'>
 <pose frame=''>-11.0 0.0 0.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
@@ -3327,7 +3374,7 @@
       </link>
     </model>
 <model name='unit_cylinder_0'>
-<pose frame=''>-18.992383481 -15.0072377229 0.3 0 -0 0</pose> 
+<pose frame=''>-19.0256209289 -15.0215560185 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3379,7 +3426,7 @@
       </link>
     </model>
 <model name='unit_cylinder_1'>
-<pose frame=''>-18.9906101452 -15.0110085297 0.9 0 -0 0</pose> 
+<pose frame=''>-19.0192425277 -15.023853561 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3431,7 +3478,7 @@
       </link>
     </model>
 <model name='unit_cylinder_2'>
-<pose frame=''>-18.9832158188 -15.0083377379 1.5 0 -0 0</pose> 
+<pose frame=''>-19.0184877084 -15.0180010428 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3483,7 +3530,7 @@
       </link>
     </model>
 <model name='unit_cylinder_3'>
-<pose frame=''>-19.0108837228 -13.9803067212 0.3 0 -0 0</pose> 
+<pose frame=''>-18.953104168 -14.0377245221 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3535,7 +3582,7 @@
       </link>
     </model>
 <model name='unit_cylinder_4'>
-<pose frame=''>-19.0072195606 -13.9732509386 0.9 0 -0 0</pose> 
+<pose frame=''>-18.9475921119 -14.0286620714 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3587,7 +3634,7 @@
       </link>
     </model>
 <model name='unit_cylinder_5'>
-<pose frame=''>-19.0151361084 -13.9637734427 1.5 0 -0 0</pose> 
+<pose frame=''>-18.9456277575 -14.0303023276 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3639,7 +3686,7 @@
       </link>
     </model>
 <model name='unit_cylinder_6'>
-<pose frame=''>-18.9718689891 -13.0432599422 0.3 0 -0 0</pose> 
+<pose frame=''>-18.98061288 -12.9682051942 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3691,7 +3738,7 @@
       </link>
     </model>
 <model name='unit_cylinder_7'>
-<pose frame=''>-18.9631745293 -13.0496717198 0.9 0 -0 0</pose> 
+<pose frame=''>-18.9729813097 -12.9644257842 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3743,7 +3790,7 @@
       </link>
     </model>
 <model name='unit_cylinder_8'>
-<pose frame=''>-18.9575121283 -13.0511287856 1.5 0 -0 0</pose> 
+<pose frame=''>-18.9767976244 -12.9632901843 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3795,7 +3842,7 @@
       </link>
     </model>
 <model name='unit_cylinder_9'>
-<pose frame=''>-18.9910343364 -11.9909991422 0.3 0 -0 0</pose> 
+<pose frame=''>-19.002848909 -12.0560067834 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3847,7 +3894,7 @@
       </link>
     </model>
 <model name='unit_cylinder_10'>
-<pose frame=''>-18.9872083162 -12.0013920998 0.9 0 -0 0</pose> 
+<pose frame=''>-18.9887632329 -12.0552406525 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3899,7 +3946,7 @@
       </link>
     </model>
 <model name='unit_cylinder_11'>
-<pose frame=''>-18.9872956924 -11.9844547445 1.5 0 -0 0</pose> 
+<pose frame=''>-19.0065287953 -12.0554188884 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -3951,7 +3998,7 @@
       </link>
     </model>
 <model name='unit_cylinder_12'>
-<pose frame=''>-17.9830944902 -15.0118822437 0.3 0 -0 0</pose> 
+<pose frame=''>-17.9824395546 -15.0267400463 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4003,7 +4050,7 @@
       </link>
     </model>
 <model name='unit_cylinder_13'>
-<pose frame=''>-17.973816464 -14.9981432145 0.9 0 -0 0</pose> 
+<pose frame=''>-17.9967803007 -15.0176531859 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4055,7 +4102,7 @@
       </link>
     </model>
 <model name='unit_cylinder_14'>
-<pose frame=''>-17.9680458211 -14.9991347589 1.5 0 -0 0</pose> 
+<pose frame=''>-17.9820540237 -15.0149193636 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4107,7 +4154,7 @@
       </link>
     </model>
 <model name='unit_cylinder_15'>
-<pose frame=''>-18.0260078443 -13.9808881545 0.3 0 -0 0</pose> 
+<pose frame=''>-17.9792672833 -14.0561960376 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4159,7 +4206,7 @@
       </link>
     </model>
 <model name='unit_cylinder_16'>
-<pose frame=''>-18.0192814946 -13.9717434889 0.9 0 -0 0</pose> 
+<pose frame=''>-17.9863746435 -14.0493748478 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4211,7 +4258,7 @@
       </link>
     </model>
 <model name='unit_cylinder_17'>
-<pose frame=''>-18.0183931369 -13.9687578417 1.5 0 -0 0</pose> 
+<pose frame=''>-17.9851615176 -14.0585824273 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4263,7 +4310,7 @@
       </link>
     </model>
 <model name='unit_cylinder_18'>
-<pose frame=''>-17.9757961112 -12.9944377215 0.3 0 -0 0</pose> 
+<pose frame=''>-18.0230101308 -12.9663943316 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4315,7 +4362,7 @@
       </link>
     </model>
 <model name='unit_cylinder_19'>
-<pose frame=''>-17.9685871815 -12.9998680215 0.9 0 -0 0</pose> 
+<pose frame=''>-18.0216407804 -12.9560162052 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4367,7 +4414,7 @@
       </link>
     </model>
 <model name='unit_cylinder_20'>
-<pose frame=''>-17.9693027385 -13.0056174034 1.5 0 -0 0</pose> 
+<pose frame=''>-18.0237852581 -12.9568948736 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4419,7 +4466,7 @@
       </link>
     </model>
 <model name='unit_cylinder_21'>
-<pose frame=''>-17.957307617 -12.024083192 0.3 0 -0 0</pose> 
+<pose frame=''>-18.0096310164 -11.9608410908 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4471,7 +4518,7 @@
       </link>
     </model>
 <model name='unit_cylinder_22'>
-<pose frame=''>-17.9548054058 -12.0292219561 0.9 0 -0 0</pose> 
+<pose frame=''>-18.0021070773 -11.9518941825 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4523,7 +4570,7 @@
       </link>
     </model>
 <model name='unit_cylinder_23'>
-<pose frame=''>-17.9590913471 -12.0182812591 1.5 0 -0 0</pose> 
+<pose frame=''>-18.0052567879 -11.9554948666 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4575,7 +4622,7 @@
       </link>
     </model>
 <model name='unit_cylinder_24'>
-<pose frame=''>-17.0468392114 -15.0260560593 0.3 0 -0 0</pose> 
+<pose frame=''>-17.0452916739 -15.0155849962 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4627,7 +4674,7 @@
       </link>
     </model>
 <model name='unit_cylinder_25'>
-<pose frame=''>-17.0446551461 -15.0450157685 0.9 0 -0 0</pose> 
+<pose frame=''>-17.0407915945 -15.0139490907 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4679,7 +4726,7 @@
       </link>
     </model>
 <model name='unit_cylinder_26'>
-<pose frame=''>-17.0303712585 -15.040075416 1.5 0 -0 0</pose> 
+<pose frame=''>-17.0398075125 -15.0083938675 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4731,7 +4778,7 @@
       </link>
     </model>
 <model name='unit_cylinder_27'>
-<pose frame=''>-17.0113488317 -14.0468256916 0.3 0 -0 0</pose> 
+<pose frame=''>-17.0280738881 -14.0352273124 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4783,7 +4830,7 @@
       </link>
     </model>
 <model name='unit_cylinder_28'>
-<pose frame=''>-16.9976039843 -14.0304749645 0.9 0 -0 0</pose> 
+<pose frame=''>-17.0214558692 -14.0360657294 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4835,7 +4882,7 @@
       </link>
     </model>
 <model name='unit_cylinder_29'>
-<pose frame=''>-17.0001607459 -14.0320010005 1.5 0 -0 0</pose> 
+<pose frame=''>-17.0227115706 -14.0415047536 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4887,7 +4934,7 @@
       </link>
     </model>
 <model name='unit_cylinder_30'>
-<pose frame=''>-17.0124594089 -13.0011924922 0.3 0 -0 0</pose> 
+<pose frame=''>-16.0303700568 -15.0127432612 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4939,7 +4986,7 @@
       </link>
     </model>
 <model name='unit_cylinder_31'>
-<pose frame=''>-17.015500373 -13.0086255976 0.9 0 -0 0</pose> 
+<pose frame=''>-16.0426673124 -15.0136996361 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -4991,7 +5038,7 @@
       </link>
     </model>
 <model name='unit_cylinder_32'>
-<pose frame=''>-17.015246721 -13.0090298131 1.5 0 -0 0</pose> 
+<pose frame=''>-15.9969842934 -14.0222035126 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5043,7 +5090,7 @@
       </link>
     </model>
 <model name='unit_cylinder_33'>
-<pose frame=''>-17.0290271195 -11.99498736 0.3 0 -0 0</pose> 
+<pose frame=''>-15.9842785666 -14.0317341502 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5095,7 +5142,7 @@
       </link>
     </model>
 <model name='unit_cylinder_34'>
-<pose frame=''>-16.007688129 -15.0276727185 0.3 0 -0 0</pose> 
+<pose frame=''>-15.992117876 -13.0120478801 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5147,7 +5194,7 @@
       </link>
     </model>
 <model name='unit_cylinder_35'>
-<pose frame=''>-16.0017025327 -15.0174725968 0.9 0 -0 0</pose> 
+<pose frame=''>-15.9984201338 -13.0186120133 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5199,7 +5246,7 @@
       </link>
     </model>
 <model name='unit_cylinder_36'>
-<pose frame=''>-16.0456293972 -13.9566377761 0.3 0 -0 0</pose> 
+<pose frame=''>-14.9551714113 -15.0085262815 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5251,7 +5298,7 @@
       </link>
     </model>
 <model name='unit_cylinder_37'>
-<pose frame=''>-16.0421765823 -13.9507662815 0.9 0 -0 0</pose> 
+<pose frame=''>-15.0273004081 -12.9595304788 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5303,7 +5350,7 @@
       </link>
     </model>
 <model name='unit_cylinder_38'>
-<pose frame=''>-16.030098847 -12.9963728719 0.3 0 -0 0</pose> 
+<pose frame=''>-10.0105611963 5.0050957661 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5355,7 +5402,7 @@
       </link>
     </model>
 <model name='unit_cylinder_39'>
-<pose frame=''>-16.0324286948 -13.0043782597 0.9 0 -0 0</pose> 
+<pose frame=''>-10.0089755799 5.00775393625 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5407,7 +5454,7 @@
       </link>
     </model>
 <model name='unit_cylinder_40'>
-<pose frame=''>-14.9698842537 -15.032074739 0.3 0 -0 0</pose> 
+<pose frame=''>-10.0108443557 5.00261122543 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5459,7 +5506,7 @@
       </link>
     </model>
 <model name='unit_cylinder_41'>
-<pose frame=''>-15.0192456255 -14.0317045803 0.3 0 -0 0</pose> 
+<pose frame=''>-9.99113396009 6.00330439885 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5511,7 +5558,7 @@
       </link>
     </model>
 <model name='unit_cylinder_42'>
-<pose frame=''>-14.9849227295 -13.0106490481 0.3 0 -0 0</pose> 
+<pose frame=''>-9.97709226989 5.99076571849 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5563,7 +5610,7 @@
       </link>
     </model>
 <model name='unit_cylinder_43'>
-<pose frame=''>-10.957536679 5.05115879931 0.3 0 -0 0</pose> 
+<pose frame=''>-9.97619617315 5.99458488579 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5615,7 +5662,7 @@
       </link>
     </model>
 <model name='unit_cylinder_44'>
-<pose frame=''>-10.0423824989 4.96817178853 0.3 0 -0 0</pose> 
+<pose frame=''>-8.96700781926 5.01774916027 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5667,7 +5714,7 @@
       </link>
     </model>
 <model name='unit_cylinder_45'>
-<pose frame=''>-10.0422796964 4.97306387227 0.9 0 -0 0</pose> 
+<pose frame=''>-8.97676053809 5.01038983496 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5719,7 +5766,7 @@
       </link>
     </model>
 <model name='unit_cylinder_46'>
-<pose frame=''>-10.0311511902 4.97872379679 1.5 0 -0 0</pose> 
+<pose frame=''>-8.9591790988 5.01700297846 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5771,7 +5818,7 @@
       </link>
     </model>
 <model name='unit_cylinder_47'>
-<pose frame=''>-9.98749677295 6.00058720878 0.3 0 -0 0</pose> 
+<pose frame=''>-6.04018468574 -9.96377585734 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5823,7 +5870,7 @@
       </link>
     </model>
 <model name='unit_cylinder_48'>
-<pose frame=''>-9.97978642724 6.00434349283 0.9 0 -0 0</pose> 
+<pose frame=''>-6.05885597853 -9.96286618631 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5875,7 +5922,7 @@
       </link>
     </model>
 <model name='unit_cylinder_49'>
-<pose frame=''>-9.99034618047 6.00724727805 1.5 0 -0 0</pose> 
+<pose frame=''>-6.04866625079 -9.96528017133 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5927,7 +5974,7 @@
       </link>
     </model>
 <model name='unit_cylinder_50'>
-<pose frame=''>-8.99938226262 5.0237471594 0.3 0 -0 0</pose> 
+<pose frame=''>-5.02093100151 -15.0310494256 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -5979,7 +6026,7 @@
       </link>
     </model>
 <model name='unit_cylinder_51'>
-<pose frame=''>-9.00594952643 5.03129700771 0.9 0 -0 0</pose> 
+<pose frame=''>-5.02213252741 -15.02975267 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6031,7 +6078,7 @@
       </link>
     </model>
 <model name='unit_cylinder_52'>
-<pose frame=''>-8.99314523384 5.02022478894 1.5 0 -0 0</pose> 
+<pose frame=''>-5.02042335464 -15.0371302083 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6083,7 +6130,7 @@
       </link>
     </model>
 <model name='unit_cylinder_53'>
-<pose frame=''>-8.99564159095 6.01838988895 0.3 0 -0 0</pose> 
+<pose frame=''>-4.97964766895 -13.035757856 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6135,7 +6182,7 @@
       </link>
     </model>
 <model name='unit_cylinder_54'>
-<pose frame=''>-8.987398679 6.02975697476 0.9 0 -0 0</pose> 
+<pose frame=''>-4.97987729188 -13.0392586151 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6187,7 +6234,7 @@
       </link>
     </model>
 <model name='unit_cylinder_55'>
-<pose frame=''>-8.98630797885 6.02565827941 1.5 0 -0 0</pose> 
+<pose frame=''>-4.98933477123 -13.0417472599 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6239,7 +6286,7 @@
       </link>
     </model>
 <model name='unit_cylinder_56'>
-<pose frame=''>-5.97732933248 8.02501817076 0.3 0 -0 0</pose> 
+<pose frame=''>-4.97825052318 -10.0343738144 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6291,7 +6338,7 @@
       </link>
     </model>
 <model name='unit_cylinder_57'>
-<pose frame=''>-4.9613804963 -15.0505166294 0.3 0 -0 0</pose> 
+<pose frame=''>-4.9749337582 -10.0489355561 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6343,7 +6390,7 @@
       </link>
     </model>
 <model name='unit_cylinder_58'>
-<pose frame=''>-4.9767464938 -15.0407295652 0.9 0 -0 0</pose> 
+<pose frame=''>-4.98019111596 -10.0449038137 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6395,7 +6442,7 @@
       </link>
     </model>
 <model name='unit_cylinder_59'>
-<pose frame=''>-4.97793197165 -15.0420098136 1.5 0 -0 0</pose> 
+<pose frame=''>-4.99897613698 -6.96157563519 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6447,7 +6494,7 @@
       </link>
     </model>
 <model name='unit_cylinder_60'>
-<pose frame=''>-5.02993349026 -10.0394371652 0.3 0 -0 0</pose> 
+<pose frame=''>-5.00235431533 -6.96569296985 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6499,7 +6546,7 @@
       </link>
     </model>
 <model name='unit_cylinder_61'>
-<pose frame=''>-5.0137740236 -10.0515571988 0.9 0 -0 0</pose> 
+<pose frame=''>-4.99132569543 -6.95472030622 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6551,7 +6598,7 @@
       </link>
     </model>
 <model name='unit_cylinder_62'>
-<pose frame=''>-5.02421115302 -10.0470178214 1.5 0 -0 0</pose> 
+<pose frame=''>-5.02978008958 -3.98355117172 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6603,7 +6650,7 @@
       </link>
     </model>
 <model name='unit_cylinder_63'>
-<pose frame=''>-5.03627195944 -6.96281323281 0.3 0 -0 0</pose> 
+<pose frame=''>-5.03525330247 -3.99738400435 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6655,7 +6702,7 @@
       </link>
     </model>
 <model name='unit_cylinder_64'>
-<pose frame=''>-5.0395064097 -6.94954821753 0.9 0 -0 0</pose> 
+<pose frame=''>-5.02837142492 -3.99262679112 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6707,7 +6754,7 @@
       </link>
     </model>
 <model name='unit_cylinder_65'>
-<pose frame=''>-5.02651449218 -6.94645388442 1.5 0 -0 0</pose> 
+<pose frame=''>-4.96735528969 0.0021140604384 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6759,7 +6806,7 @@
       </link>
     </model>
 <model name='unit_cylinder_66'>
-<pose frame=''>-4.98067379862 -4.03220142835 0.3 0 -0 0</pose> 
+<pose frame=''>-4.96388893308 0.00316919549557 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6811,7 +6858,7 @@
       </link>
     </model>
 <model name='unit_cylinder_67'>
-<pose frame=''>-4.99005417756 -4.01496946569 0.9 0 -0 0</pose> 
+<pose frame=''>-4.95941871918 -0.00279619304965 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6863,7 +6910,7 @@
       </link>
     </model>
 <model name='unit_cylinder_68'>
-<pose frame=''>-4.98824274757 -4.02148110509 1.5 0 -0 0</pose> 
+<pose frame=''>-4.97665239249 4.00115435384 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6915,7 +6962,7 @@
       </link>
     </model>
 <model name='unit_cylinder_69'>
-<pose frame=''>-5.03782356182 0.0265720674169 0.3 0 -0 0</pose> 
+<pose frame=''>-4.96123217518 4.01271607768 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -6967,7 +7014,7 @@
       </link>
     </model>
 <model name='unit_cylinder_70'>
-<pose frame=''>-5.05479726321 0.0228557413892 0.9 0 -0 0</pose> 
+<pose frame=''>-4.97257461751 3.99964357237 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7019,7 +7066,7 @@
       </link>
     </model>
 <model name='unit_cylinder_71'>
-<pose frame=''>-5.0508808942 0.0344332054339 1.5 0 -0 0</pose> 
+<pose frame=''>-5.01684145792 4.99076180541 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7071,7 +7118,7 @@
       </link>
     </model>
 <model name='unit_cylinder_72'>
-<pose frame=''>-4.99059347366 5.02342648411 0.3 0 -0 0</pose> 
+<pose frame=''>-5.01776492797 4.98397670151 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7123,7 +7170,7 @@
       </link>
     </model>
 <model name='unit_cylinder_73'>
-<pose frame=''>-4.9800218774 5.02204412601 0.9 0 -0 0</pose> 
+<pose frame=''>-5.00644599023 4.99819325167 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7175,7 +7222,7 @@
       </link>
     </model>
 <model name='unit_cylinder_74'>
-<pose frame=''>-4.99481011272 5.01937620264 1.5 0 -0 0</pose> 
+<pose frame=''>-4.97988111141 5.99110220012 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7227,7 +7274,7 @@
       </link>
     </model>
 <model name='unit_cylinder_75'>
-<pose frame=''>-5.03156169588 6.04129613353 0.3 0 -0 0</pose> 
+<pose frame=''>-4.97790646693 5.98630708977 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7279,7 +7326,7 @@
       </link>
     </model>
 <model name='unit_cylinder_76'>
-<pose frame=''>-5.02912114826 6.02648568183 0.9 0 -0 0</pose> 
+<pose frame=''>-4.97747650032 5.99498811339 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7331,7 +7378,7 @@
       </link>
     </model>
 <model name='unit_cylinder_77'>
-<pose frame=''>-5.02596478025 6.0350380343 1.5 0 -0 0</pose> 
+<pose frame=''>-4.99007872937 6.99916679576 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7383,7 +7430,7 @@
       </link>
     </model>
 <model name='unit_cylinder_78'>
-<pose frame=''>-5.02283132991 6.96701352956 0.3 0 -0 0</pose> 
+<pose frame=''>-4.99468358126 7.00328295893 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7435,7 +7482,7 @@
       </link>
     </model>
 <model name='unit_cylinder_79'>
-<pose frame=''>-5.01076531523 6.97574725517 0.9 0 -0 0</pose> 
+<pose frame=''>-4.98581485361 7.00862531745 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7487,7 +7534,7 @@
       </link>
     </model>
 <model name='unit_cylinder_80'>
-<pose frame=''>-5.02451614811 6.96372885897 1.5 0 -0 0</pose> 
+<pose frame=''>-5.03895302583 8.00003435356 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7539,7 +7586,7 @@
       </link>
     </model>
 <model name='unit_cylinder_81'>
-<pose frame=''>-4.97088629709 7.99265066185 0.3 0 -0 0</pose> 
+<pose frame=''>-5.03508112863 8.01048629167 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7591,7 +7638,7 @@
       </link>
     </model>
 <model name='unit_cylinder_82'>
-<pose frame=''>-4.9767159432 7.99118023521 0.9 0 -0 0</pose> 
+<pose frame=''>-5.02244157855 8.01714980772 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7643,7 +7690,7 @@
       </link>
     </model>
 <model name='unit_cylinder_83'>
-<pose frame=''>-4.96775309749 8.00660761377 1.5 0 -0 0</pose> 
+<pose frame=''>-5.04258567234 9.00417437093 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7695,7 +7742,7 @@
       </link>
     </model>
 <model name='unit_cylinder_84'>
-<pose frame=''>-4.95965549614 8.95563117918 0.3 0 -0 0</pose> 
+<pose frame=''>-5.02820156402 8.99670966676 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7747,7 +7794,7 @@
       </link>
     </model>
 <model name='unit_cylinder_85'>
-<pose frame=''>-4.9655779702 8.95316364308 0.9 0 -0 0</pose> 
+<pose frame=''>-5.03328325137 9.00127237318 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7799,7 +7846,7 @@
       </link>
     </model>
 <model name='unit_cylinder_86'>
-<pose frame=''>-4.94890587693 8.95917958067 1.5 0 -0 0</pose> 
+<pose frame=''>-4.95789149822 9.99998866019 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7851,7 +7898,7 @@
       </link>
     </model>
 <model name='unit_cylinder_87'>
-<pose frame=''>-4.99435192944 9.968948391 0.3 0 -0 0</pose> 
+<pose frame=''>-4.95550819153 9.99922210261 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7903,7 +7950,7 @@
       </link>
     </model>
 <model name='unit_cylinder_88'>
-<pose frame=''>-4.99159879973 9.95883391727 0.9 0 -0 0</pose> 
+<pose frame=''>-4.9542023309 9.99643986957 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -7955,7 +8002,7 @@
       </link>
     </model>
 <model name='unit_cylinder_89'>
-<pose frame=''>-4.98437458421 9.9741676871 1.5 0 -0 0</pose> 
+<pose frame=''>-5.05559842573 11.0153213243 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8007,7 +8054,7 @@
       </link>
     </model>
 <model name='unit_cylinder_90'>
-<pose frame=''>-4.97650855605 11.018045595 0.3 0 -0 0</pose> 
+<pose frame=''>-5.04587661888 11.0135080742 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8059,7 +8106,7 @@
       </link>
     </model>
 <model name='unit_cylinder_91'>
-<pose frame=''>-4.98168499605 11.0168143569 0.9 0 -0 0</pose> 
+<pose frame=''>-5.05468231556 11.017680657 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8111,7 +8158,7 @@
       </link>
     </model>
 <model name='unit_cylinder_92'>
-<pose frame=''>-4.98700613318 11.0100691223 1.5 0 -0 0</pose> 
+<pose frame=''>-3.98473463308 -15.0203537264 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8163,7 +8210,7 @@
       </link>
     </model>
 <model name='unit_cylinder_93'>
-<pose frame=''>-3.97071783579 -13.0165062579 0.3 0 -0 0</pose> 
+<pose frame=''>-3.96873581978 -15.0115278581 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8215,7 +8262,7 @@
       </link>
     </model>
 <model name='unit_cylinder_94'>
-<pose frame=''>-3.95868086076 -13.0135344361 0.9 0 -0 0</pose> 
+<pose frame=''>-3.9824042208 -15.0200942727 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8267,7 +8314,7 @@
       </link>
     </model>
 <model name='unit_cylinder_95'>
-<pose frame=''>-3.97060965991 -13.0276132331 1.5 0 -0 0</pose> 
+<pose frame=''>-4.03329316208 -13.0267179775 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8319,7 +8366,7 @@
       </link>
     </model>
 <model name='unit_cylinder_96'>
-<pose frame=''>-3.95991960837 -9.98126166184 0.3 0 -0 0</pose> 
+<pose frame=''>-4.04989792798 -13.0279202242 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8371,7 +8418,7 @@
       </link>
     </model>
 <model name='unit_cylinder_97'>
-<pose frame=''>-3.95095692352 -9.97891396161 0.9 0 -0 0</pose> 
+<pose frame=''>-4.04571168082 -13.0320283141 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8423,7 +8470,7 @@
       </link>
     </model>
 <model name='unit_cylinder_98'>
-<pose frame=''>-3.95125543398 -9.97886405148 1.5 0 -0 0</pose> 
+<pose frame=''>-3.98046642279 -12.0398564666 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8475,7 +8522,7 @@
       </link>
     </model>
 <model name='unit_cylinder_99'>
-<pose frame=''>-3.96183076261 -7.01177499668 0.3 0 -0 0</pose> 
+<pose frame=''>-3.94529130245 -9.95554350675 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8527,7 +8574,7 @@
       </link>
     </model>
 <model name='unit_cylinder_100'>
-<pose frame=''>-3.96857562338 -7.01247402445 0.9 0 -0 0</pose> 
+<pose frame=''>-3.95213730991 -9.95827642433 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8579,7 +8626,7 @@
       </link>
     </model>
 <model name='unit_cylinder_101'>
-<pose frame=''>-3.98068333741 -7.01408305663 1.5 0 -0 0</pose> 
+<pose frame=''>-3.95659095095 -9.95736911519 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8631,7 +8678,7 @@
       </link>
     </model>
 <model name='unit_cylinder_102'>
-<pose frame=''>-3.97527999582 -3.96404059407 0.3 0 -0 0</pose> 
+<pose frame=''>-3.98836414024 -8.99450868607 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8683,7 +8730,7 @@
       </link>
     </model>
 <model name='unit_cylinder_103'>
-<pose frame=''>-3.98447253608 -3.95962011263 0.9 0 -0 0</pose> 
+<pose frame=''>-3.99665045891 -9.00436230256 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8735,7 +8782,7 @@
       </link>
     </model>
 <model name='unit_cylinder_104'>
-<pose frame=''>-3.98907732058 -3.95727264878 1.5 0 -0 0</pose> 
+<pose frame=''>-3.99720354318 -8.99514810546 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8787,7 +8834,7 @@
       </link>
     </model>
 <model name='unit_cylinder_105'>
-<pose frame=''>-4.05463239943 0.0140608398514 0.3 0 -0 0</pose> 
+<pose frame=''>-3.98020629734 -7.00907784364 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8839,7 +8886,7 @@
       </link>
     </model>
 <model name='unit_cylinder_106'>
-<pose frame=''>-4.05286910005 0.0142012012898 0.9 0 -0 0</pose> 
+<pose frame=''>-3.98865030458 -7.01535228386 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8891,7 +8938,7 @@
       </link>
     </model>
 <model name='unit_cylinder_107'>
-<pose frame=''>-4.04928948197 0.0111268213651 1.5 0 -0 0</pose> 
+<pose frame=''>-3.98559278036 -6.99922155435 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8943,7 +8990,7 @@
       </link>
     </model>
 <model name='unit_cylinder_108'>
-<pose frame=''>-3.98122816571 4.01408271446 0.3 0 -0 0</pose> 
+<pose frame=''>-3.96497330996 -3.95271090555 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -8995,7 +9042,7 @@
       </link>
     </model>
 <model name='unit_cylinder_109'>
-<pose frame=''>-3.9854370973 4.0020594891 0.9 0 -0 0</pose> 
+<pose frame=''>-3.97912323475 -3.94186594488 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9047,7 +9094,7 @@
       </link>
     </model>
 <model name='unit_cylinder_110'>
-<pose frame=''>-3.98191122012 4.0122128184 1.5 0 -0 0</pose> 
+<pose frame=''>-3.96834921371 -3.94717120883 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9099,7 +9146,7 @@
       </link>
     </model>
 <model name='unit_cylinder_111'>
-<pose frame=''>-4.01932369581 5.03958765756 0.3 0 -0 0</pose> 
+<pose frame=''>-3.95936437391 -0.0170742061133 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9151,7 +9198,7 @@
       </link>
     </model>
 <model name='unit_cylinder_112'>
-<pose frame=''>-4.01382522465 5.04996529168 0.9 0 -0 0</pose> 
+<pose frame=''>-3.9565617313 -0.0327676005354 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9203,7 +9250,7 @@
       </link>
     </model>
 <model name='unit_cylinder_113'>
-<pose frame=''>-4.0051152126 5.04954770741 1.5 0 -0 0</pose> 
+<pose frame=''>-3.95821135689 -0.0164057703828 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9255,7 +9302,7 @@
       </link>
     </model>
 <model name='unit_cylinder_114'>
-<pose frame=''>-4.0076458467 5.97584051766 0.3 0 -0 0</pose> 
+<pose frame=''>-3.96576906701 4.04295643976 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9307,7 +9354,7 @@
       </link>
     </model>
 <model name='unit_cylinder_115'>
-<pose frame=''>-4.00690516477 5.98192548883 0.9 0 -0 0</pose> 
+<pose frame=''>-3.95856047173 4.04661416271 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9359,7 +9406,7 @@
       </link>
     </model>
 <model name='unit_cylinder_116'>
-<pose frame=''>-4.00010109592 5.98672345499 1.5 0 -0 0</pose> 
+<pose frame=''>-3.96115442458 4.03518691712 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9411,7 +9458,7 @@
       </link>
     </model>
 <model name='unit_cylinder_117'>
-<pose frame=''>-4.02495928011 7.03717414021 0.3 0 -0 0</pose> 
+<pose frame=''>-4.02570362553 4.99943115142 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9463,7 +9510,7 @@
       </link>
     </model>
 <model name='unit_cylinder_118'>
-<pose frame=''>-4.03355892156 7.02585670432 0.9 0 -0 0</pose> 
+<pose frame=''>-4.02160997285 5.00095880109 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9515,7 +9562,7 @@
       </link>
     </model>
 <model name='unit_cylinder_119'>
-<pose frame=''>-4.03364688154 7.02321425078 1.5 0 -0 0</pose> 
+<pose frame=''>-4.02992170362 5.00232830502 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9567,7 +9614,7 @@
       </link>
     </model>
 <model name='unit_cylinder_120'>
-<pose frame=''>-3.95972594986 8.05109339817 0.3 0 -0 0</pose> 
+<pose frame=''>-4.00047487541 6.01068582881 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9619,7 +9666,7 @@
       </link>
     </model>
 <model name='unit_cylinder_121'>
-<pose frame=''>-3.94618090588 8.04570546492 0.9 0 -0 0</pose> 
+<pose frame=''>-4.00944456028 6.0090641719 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9671,7 +9718,7 @@
       </link>
     </model>
 <model name='unit_cylinder_122'>
-<pose frame=''>-3.95210252806 8.04938447827 1.5 0 -0 0</pose> 
+<pose frame=''>-4.00508920353 6.00436585756 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9723,7 +9770,7 @@
       </link>
     </model>
 <model name='unit_cylinder_123'>
-<pose frame=''>-3.9793948778 8.95965219024 0.3 0 -0 0</pose> 
+<pose frame=''>-4.04710697605 6.98567371699 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9775,7 +9822,7 @@
       </link>
     </model>
 <model name='unit_cylinder_124'>
-<pose frame=''>-3.96408348056 8.959614625 0.9 0 -0 0</pose> 
+<pose frame=''>-4.04894720168 6.99304346849 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9827,7 +9874,7 @@
       </link>
     </model>
 <model name='unit_cylinder_125'>
-<pose frame=''>-3.96579306062 8.94755255022 1.5 0 -0 0</pose> 
+<pose frame=''>-4.05571128934 6.99565644131 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9879,7 +9926,7 @@
       </link>
     </model>
 <model name='unit_cylinder_126'>
-<pose frame=''>-4.03691974694 10.0428891245 0.3 0 -0 0</pose> 
+<pose frame=''>-4.02394391326 8.03007216249 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9931,7 +9978,7 @@
       </link>
     </model>
 <model name='unit_cylinder_127'>
-<pose frame=''>-4.03506766224 10.0365899861 0.9 0 -0 0</pose> 
+<pose frame=''>-4.03803683744 8.03700145535 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -9983,7 +10030,7 @@
       </link>
     </model>
 <model name='unit_cylinder_128'>
-<pose frame=''>-4.02660217554 10.0380583081 1.5 0 -0 0</pose> 
+<pose frame=''>-4.0325760476 8.01999404522 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10035,7 +10082,7 @@
       </link>
     </model>
 <model name='unit_cylinder_129'>
-<pose frame=''>-4.03880345274 11.0503826018 0.3 0 -0 0</pose> 
+<pose frame=''>-4.01078404534 8.9635398803 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10087,7 +10134,7 @@
       </link>
     </model>
 <model name='unit_cylinder_130'>
-<pose frame=''>-4.04133347065 11.0378974602 0.9 0 -0 0</pose> 
+<pose frame=''>-4.02927685831 8.96116729087 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10139,7 +10186,7 @@
       </link>
     </model>
 <model name='unit_cylinder_131'>
-<pose frame=''>-4.0384919678 11.0350452042 1.5 0 -0 0</pose> 
+<pose frame=''>-4.0210202143 8.96643875688 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10191,7 +10238,7 @@
       </link>
     </model>
 <model name='unit_cylinder_132'>
-<pose frame=''>-2.97357178313 -14.9976189769 0.3 0 -0 0</pose> 
+<pose frame=''>-4.04107998549 10.0270028068 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10243,7 +10290,7 @@
       </link>
     </model>
 <model name='unit_cylinder_133'>
-<pose frame=''>-2.96700424633 -14.9997528667 0.9 0 -0 0</pose> 
+<pose frame=''>-4.02930097077 10.016694199 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10295,7 +10342,7 @@
       </link>
     </model>
 <model name='unit_cylinder_134'>
-<pose frame=''>-2.95937516596 -14.9889029086 1.5 0 -0 0</pose> 
+<pose frame=''>-4.04071479146 10.014509434 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10347,7 +10394,7 @@
       </link>
     </model>
 <model name='unit_cylinder_135'>
-<pose frame=''>-2.95964669556 -12.9951237678 0.3 0 -0 0</pose> 
+<pose frame=''>-4.04131548845 10.9942160826 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10399,7 +10446,7 @@
       </link>
     </model>
 <model name='unit_cylinder_136'>
-<pose frame=''>-2.97264499791 -12.999299513 0.9 0 -0 0</pose> 
+<pose frame=''>-4.0323850021 10.9989336147 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10451,7 +10498,7 @@
       </link>
     </model>
 <model name='unit_cylinder_137'>
-<pose frame=''>-2.96647903734 -12.9965241304 1.5 0 -0 0</pose> 
+<pose frame=''>-4.02966947851 10.9945752784 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10503,7 +10550,7 @@
       </link>
     </model>
 <model name='unit_cylinder_138'>
-<pose frame=''>-3.00488967917 -10.0154534569 0.3 0 -0 0</pose> 
+<pose frame=''>-2.98427812926 -15.0103886388 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10555,7 +10602,7 @@
       </link>
     </model>
 <model name='unit_cylinder_139'>
-<pose frame=''>-3.01502926067 -10.0315904875 0.9 0 -0 0</pose> 
+<pose frame=''>-2.97753765289 -15.0022999402 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10607,7 +10654,7 @@
       </link>
     </model>
 <model name='unit_cylinder_140'>
-<pose frame=''>-3.00426868881 -10.0278293434 1.5 0 -0 0</pose> 
+<pose frame=''>-2.97539694145 -15.0121967319 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10659,7 +10706,7 @@
       </link>
     </model>
 <model name='unit_cylinder_141'>
-<pose frame=''>-2.97669687048 -6.96189665599 0.3 0 -0 0</pose> 
+<pose frame=''>-2.94923785309 -12.9856848447 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10711,7 +10758,7 @@
       </link>
     </model>
 <model name='unit_cylinder_142'>
-<pose frame=''>-2.96110853464 -6.97066964325 0.9 0 -0 0</pose> 
+<pose frame=''>-2.94133011979 -12.9843073171 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10763,7 +10810,7 @@
       </link>
     </model>
 <model name='unit_cylinder_143'>
-<pose frame=''>-2.97127383792 -6.96464199316 1.5 0 -0 0</pose> 
+<pose frame=''>-2.95139971444 -12.9934995161 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10815,7 +10862,7 @@
       </link>
     </model>
 <model name='unit_cylinder_144'>
-<pose frame=''>-3.03079067007 -3.97500164381 0.3 0 -0 0</pose> 
+<pose frame=''>-3.0299427433 -9.97360929813 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10867,7 +10914,7 @@
       </link>
     </model>
 <model name='unit_cylinder_145'>
-<pose frame=''>-3.01378373712 -3.9644359837 0.9 0 -0 0</pose> 
+<pose frame=''>-3.01935274324 -9.96578415017 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10919,7 +10966,7 @@
       </link>
     </model>
 <model name='unit_cylinder_146'>
-<pose frame=''>-3.01647811029 -3.97308692553 1.5 0 -0 0</pose> 
+<pose frame=''>-3.01923273849 -9.97233862332 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -10971,7 +11018,7 @@
       </link>
     </model>
 <model name='unit_cylinder_147'>
-<pose frame=''>-2.97237086008 0.0110368655138 0.3 0 -0 0</pose> 
+<pose frame=''>-3.01122967707 -6.96988661047 0.3 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -11023,7 +11070,7 @@
       </link>
     </model>
 <model name='unit_cylinder_148'>
-<pose frame=''>-2.97540215887 0.0174425478792 0.9 0 -0 0</pose> 
+<pose frame=''>-3.01298270023 -6.97673914827 0.9 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>
@@ -11075,7 +11122,319 @@
       </link>
     </model>
 <model name='unit_cylinder_149'>
-<pose frame=''>-2.97240442203 0.0114924639913 1.5 0 -0 0</pose> 
+<pose frame=''>-3.02434608028 -6.97219205031 1.5 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <max_contacts>100</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <material>
+<ambient>0.5 0.6 0.5 1</ambient> 
+<diffuse>0.5 0.6 0.5 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+<model name='unit_cylinder_150'>
+<pose frame=''>-2.99603782789 -4.01042325601 0.3 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <max_contacts>100</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <material>
+<ambient>0.5 0.6 0.5 1</ambient> 
+<diffuse>0.5 0.6 0.5 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+<model name='unit_cylinder_151'>
+<pose frame=''>-3.00104104618 -4.01463084173 0.9 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <max_contacts>100</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <material>
+<ambient>0.5 0.6 0.5 1</ambient> 
+<diffuse>0.5 0.6 0.5 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+<model name='unit_cylinder_152'>
+<pose frame=''>-3.00192086338 -4.01089520932 1.5 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <max_contacts>100</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <material>
+<ambient>0.5 0.6 0.5 1</ambient> 
+<diffuse>0.5 0.6 0.5 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+<model name='unit_cylinder_153'>
+<pose frame=''>-3.01068583188 -0.0510186596369 0.3 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <max_contacts>100</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <material>
+<ambient>0.5 0.6 0.5 1</ambient> 
+<diffuse>0.5 0.6 0.5 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+<model name='unit_cylinder_154'>
+<pose frame=''>-3.00543025457 -0.0419802549894 0.9 0 -0 0</pose> 
+      <static>True</static>
+      <link name='link'>
+        <inertial>
+          <mass>100</mass>
+          <inertia>
+            <ixx>0.145833</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.145833</iyy>
+            <iyz>0</iyz>
+            <izz>0.125</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <max_contacts>100</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <cylinder>
+<radius>0.4</radius> 
+<length>0.6</length> 
+</cylinder> 
+          </geometry>
+          <material>
+<ambient>0.5 0.6 0.5 1</ambient> 
+<diffuse>0.5 0.6 0.5 1</diffuse> 
+</material>        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+<model name='unit_cylinder_155'>
+<pose frame=''>-3.01644673581 -0.0527675235154 1.5 0 -0 0</pose> 
       <static>True</static>
       <link name='link'>
         <inertial>

@@ -128,6 +128,6 @@ class Evolve(object):
 	
 
 if __name__ == "__main__":
-	e = Evolve("src/world_generator/config/params.json")
+	e = Evolve("src/gazebosim_world_generator/config/params.json")
 				
 

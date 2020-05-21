@@ -100,7 +100,7 @@ key| sub-key | type | description
 
 ## Usage
 
-Both nodes require the generate_environments node to be running. This is invoked using: rosrun world_generator generate_environment.py
+Both nodes require the generate_environments node to be running. This is invoked using: rosrun gazebosim_world_generator generate_environment.py
 
 ### Generate_world
 

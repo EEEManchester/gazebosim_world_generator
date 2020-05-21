@@ -2,12 +2,12 @@
 
 "metres_per_pixel" : 0.5,  
 
-"input_map" : "src/world_generator/maps/culham_large.tiff",
-"radiation_map" : "src/world_generator/maps/radiation.tiff",
-"output_map" : "src/world_generator/maps/culham.png",
-"output_world_filename" : "src/world_generator/worlds/base/culham_environment.world",
-"output_radiation_filename" : "src/world_generator/worlds/base/radiation.yaml",
-"templates_folder" : "src/world_generator/templates/",
+"input_map" : "src/gazebosim_world_generator/maps/culham_large.tiff",
+"radiation_map" : "src/gazebosim_world_generator/maps/radiation.tiff",
+"output_map" : "src/gazebosim_world_generator/maps/culham.png",
+"output_world_filename" : "src/gazebosim_world_generator/worlds/base/culham_environment.world",
+"output_radiation_filename" : "src/gazebosim_world_generator/worlds/base/radiation.yaml",
+"templates_folder" : "src/gazebosim_world_generator/templates/",
 "barrel_pos_noise" : 0.2,
 "barrel_stacking_noise" : 0.1,
 

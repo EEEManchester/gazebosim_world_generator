@@ -3,7 +3,7 @@
 import rospy
 from genEnvironment import Environment
 from evolveEnvironment import Evolve
-from world_generator.srv import Gen_Base_World,Gen_Base_WorldResponse 
+from gazebosim_world_generator.srv import Gen_Base_World,Gen_Base_WorldResponse 
 from datetime import datetime
 import os 
 import json
@@ -51,7 +51,7 @@ class ServiceCaller(object):
         
         now = datetime.now().strftime("%Y_%m_%d_%H%M%S") 
 
-        folder_name = "src/world_generator/worlds/evolved_" + now
+        folder_name = "src/gazebosim_world_generator/worlds/evolved_" + now
         if not os.path.exists(folder_name):
             os.makedirs(folder_name)
 
@@ -98,7 +98,7 @@ class ServiceCaller(object):
 
         
 if __name__ == "__main__":
-    rospy.init_node('world_generator')
+    rospy.init_node('gazebosim_world_generator')
     x = ServiceCaller()
 
     rospy.spin()
