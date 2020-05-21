@@ -1,0 +1,57 @@
+sources:
+  source_0:
+  - x: -15
+  - y: -15
+  - z: 0
+  - value: 25.5
+  - type: alpha
+  - units: Sv/h
+  - noise: 2.0
+  source_1:
+  - x: -15
+  - y: -14
+  - z: 0
+  - value: 25.5
+  - type: alpha
+  - units: Sv/h
+  - noise: 2.0
+  source_2:
+  - x: -15
+  - y: -13
+  - z: 0
+  - value: 25.5
+  - type: alpha
+  - units: Sv/h
+  - noise: 2.0
+  source_3:
+  - x: -5
+  - y: -15
+  - z: 0
+  - value: 25.5
+  - type: beta
+  - units: Sv/h
+  - noise: 2.0
+  source_4:
+  - x: -5
+  - y: -7
+  - z: 0
+  - value: 25.5
+  - type: gamma
+  - units: Sv/h
+  - noise: 2.0
+  source_5:
+  - x: -5
+  - y: 0
+  - z: 0
+  - value: 25.5
+  - type: gamma
+  - units: Sv/h
+  - noise: 2.0
+  source_6:
+  - x: -5
+  - y: 4
+  - z: 0
+  - value: 25.5
+  - type: gamma
+  - units: Sv/h
+  - noise: 2.0

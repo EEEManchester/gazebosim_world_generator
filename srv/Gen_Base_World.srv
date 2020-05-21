@@ -1,0 +1,4 @@
+string map_file
+string config_file
+---
+bool Completed

@@ -1,0 +1,63 @@
+{
+
+"metres_per_pixel" : float,  
+
+"input_map" : "path/to/file/filename.extension",
+"radiation_map" : "path/to/file/filename.extension",
+"output_map" : "path/to/file/filename.extension",
+"output_filename" : "path/to/file/filename.extension",
+"output_radiation_filename" : "path/to/file/filename.extension",
+"templates_folder" : "path/to/file/filename.extension",
+"barrel_pos_noise" : float,
+"barrel_stacking_noise" : float,
+
+"radiation_scaling" : float,
+"radiation_units_alpha" : string,
+"radiation_units_beta" : string,
+"radiation_units_gamma" : string,
+
+"map_centre": {
+  "x" : pixel index,
+  "y" : pixel index
+  },
+
+"cylinder": {
+  "r": ratio,
+  "z": ratio,
+  "colour": "float float float float rgba"
+  },
+
+"box": {
+  "x": ratio,
+  "y": ratio,
+  "z": ratio,
+  "colour": "float float float float rgba"
+  },
+
+"heights" :  {
+  "100": int <- these are stack heights,
+  "200": int,
+  "255": int
+  },
+
+"walls" : {
+  "height" : float ,
+  "colour": "float float float float rgba"
+  },
+
+"sizing" :  {
+  "0" : ratio,
+  "100": ratio,
+  "200": ratio,
+  "255": ratio
+  },
+
+"map_evolution": {
+  "number_of_barrels_to_remove" : int,
+  "number_of_extra_barrels" : int,
+  "number_of_blocks_to_remove" : int, 
+  "number_of_extra_blocks" : int
+  }
+  
+}
+
