@@ -7,6 +7,7 @@ import json
 import yaml
 import random
 import os
+import rospy
 
 #envArray[i][j] = random.choice([True, False, False, False, False])
 
@@ -17,7 +18,8 @@ class to generate a gazebo environments from an image
 class Environment(object):
 	def __init__(self,param_file,input_map_name = None,out_file_name=None,input_rad_map_name = None):
 
-		self._json_dict = self.read_json(param_file)
+		self._json_dict = self.read_params(param_file)
+		self.check_param_server()
 
 		if out_file_name:
 			self._outputfile = out_file_name
@@ -64,27 +66,26 @@ class Environment(object):
 				if not ((a[0] == 0) &(a[1] == 0) & (a[2] == 0) | (a[0] == 255) &(a[1] == 255) & (a[2] == 255)):
 					x = (j - self._map_centre["x"])*self._metres_per_pixel 
 					y = (i - self._map_centre["y"])*self._metres_per_pixel
-					if (a[0] > 0):
-						sources["source_"+str(count)] = [{'x':x},{'y':y},{'z':0},{'value':float(a[0]*self._radiation_scaling)},{'type':'alpha'},{'units':str(self._radiation_units_alpha)},{'noise':2.0}]
-						count +=1
-					if (a[1] > 0):
-						sources["source_"+str(count)] = [{'x':x},{'y':y},{'z':0},{'value':float(a[1]*self._radiation_scaling)},{'type':'beta'},{'units':str(self._radiation_units_beta)},{'noise':2.0}]
-						count +=1
-					if (a[2] > 0):
-						sources["source_"+str(count)] = [{'x':x},{'y':y},{'z':0},{'value':float(a[2]*self._radiation_scaling)},{'type':'gamma'},{'units':str(self._radiation_units_gamma)},{'noise':2.0}]
-						count +=1
-
-					"""
-					if (a[0] > 0):
-						sources["source_"+str(count)] = dict(x=x,y=y,value=float(a[0]*self._radiation_scaling),'type'='alpha')
-						count +=1
-					if (a[1] > 0):
-						sources["source_"+str(count)] = dict(x=x,y=y,value=float(a[1]*self._radiation_scaling),type='beta')
-						count +=1
-					if (a[2] > 0):
-						sources["source_"+str(count)] = dict(x=x,y=y,value=float(a[2]*self._radiation_scaling),type='gamma')
-						count +=1
-					"""
+					if self.radiation_output_file_format == 0:
+						if (a[0] > 0):
+							sources["source_"+str(count)] = {'x':x,'y':y,'z':0,'value':float(a[0]*self._radiation_scaling),'type':'alpha','units':str(self._radiation_units_alpha),'noise':2.0}
+							count +=1
+						if (a[1] > 0):
+							sources["source_"+str(count)] = {'x':x,'y':y,'z':0,'value':float(a[1]*self._radiation_scaling),'type':'beta','units':str(self._radiation_units_beta),'noise':2.0}
+							count +=1
+						if (a[2] > 0):
+							sources["source_"+str(count)] = {'x':x,'y':y,'z':0,'value':float(a[2]*self._radiation_scaling),'type':'gamma','units':str(self._radiation_units_gamma),'noise':2.0}
+							count +=1
+					elif self.radiation_output_file_format == 1:
+						if (a[0] > 0):
+							sources["source_"+str(count)] = {'x':x},{'y':y},{'z':0},{'value':float(a[0]*self._radiation_scaling)},{'type':'alpha'},{'units':str(self._radiation_units_alpha)},{'noise':2.0}
+							count +=1
+						if (a[1] > 0):
+							sources["source_"+str(count)] = {'x':x},{'y':y},{'z':0},{'value':float(a[1]*self._radiation_scaling)},{'type':'beta'},{'units':str(self._radiation_units_beta)},{'noise':2.0}
+							count +=1
+						if (a[2] > 0):
+							sources["source_"+str(count)] = {'x':x},{'y':y},{'z':0},{'value':float(a[2]*self._radiation_scaling)},{'type':'gamma'},{'units':str(self._radiation_units_gamma)},{'noise':2.0}
+							count +=1
 
 		s = dict(sources=sources)
 
@@ -125,34 +126,151 @@ class Environment(object):
 		self._blocks = self._blocks.clip(min=0).astype(int)
 		self._size_array = self._size_array.clip(min=0).astype(int)
 
-	def read_json(self,f_name):
+	def check_param_server(self):
+
+		"allows setting of default values if not provided through either the config file or loaded into rosparam server"
+
+		if rospy.has_param("input_map"):
+			self._input_map = rospy.get_param("input_map")
+		elif self._input_map == None:
+			self._input_map = "default_value"
+		if rospy.has_param("output_map"):
+			self._output_map = rospy.get_param("output_map")
+		elif self._output_map == None:
+			self._output_map = "default_value"
+		if rospy.has_param("radiation_map"):
+			self._input_rad_map_name = rospy.get_param("radiation_map")
+		elif self._input_rad_map_name == None:
+			self._input_rad_map_name = "default_value"
+		if rospy.has_param("output_filename"):
+			self._outputfile = rospy.get_param("output_filename")
+		elif self._outputfile == None:
+			self._outputfile = "default_value"
+		if rospy.has_param("output_radiation_filename"):
+			self._radiation_file = rospy.get_param("output_radiation_filename")
+		elif self._radiation_file == None:
+			self._radiation_file = "default_value"
+		if rospy.has_param("output_config_file_name"):
+			self._output_config_file_name = rospy.get_param("output_config_file_name")
+		elif self._output_config_file_name == None:
+			self._output_config_file_name = "default_value"
+		if rospy.has_param("templates_folder"):
+			self._templates_folder = rospy.get_param("templates_folder")
+		elif self._templates_folder == None:
+			self._templates_folder = "default_value"
+		if rospy.has_param("box"):
+			self._box = rospy.get_param("box")
+		elif self._box == None:
+			self._box = "default_value"
+		if rospy.has_param("cylinder"):
+			self._cylinder = rospy.get_param("cylinder")
+		elif self._cylinder == None:
+			self._cylinder = "default_value"
+		if rospy.has_param("walls"):
+			self._walls = rospy.get_param("walls")
+		elif self._walls == None:
+			self._walls = "default_value"
+		if rospy.has_param("map_centre"):
+			self._map_centre = rospy.get_param("map_centre")
+		elif self._map_centre == None:
+			self._map_centre = "default_value"
+		if rospy.has_param("sizing"):
+			self._sizing = rospy.get_param("sizing")
+		elif self._sizing == None:
+			self._sizing = "default_value"
+		if rospy.has_param("metres_per_pixel"):
+			self._metres_per_pixel = rospy.get_param("metres_per_pixel")
+		elif self._metres_per_pixel == None:
+			self._metres_per_pixel = "default_value"
+		if rospy.has_param("barrel_pos_noise"):
+			self._barrel_pos_noise = rospy.get_param("barrel_pos_noise")
+		elif self._barrel_pos_noise == None:
+			self._barrel_pos_noise = "default_value"
+		if rospy.has_param("barrel_stacking_noise"):
+			self._barrel_stacking_noise = rospy.get_param("barrel_stacking_noise")
+		elif self._barrel_stacking_noise == None:
+			self._barrel_stacking_noise = "default_value"
+		if rospy.has_param("heights"):
+			self._heights = rospy.get_param("heights")
+		elif self._heights == None:
+			self._heights = "default_value"
+		if rospy.has_param("radiation_scaling"):
+			self._radiation_scaling = rospy.get_param("radiation_scaling")
+		elif self._radiation_scaling == None:
+			self._radiation_scaling = "default_value"
+		if rospy.has_param("radiation_units_alpha"):
+			self._radiation_units_alpha = rospy.get_param("radiation_units_alpha")
+		elif self._radiation_units_alpha == None:
+			self._radiation_units_alpha = "default_value"
+		if rospy.has_param("radiation_units_beta"):
+			self._radiation_units_beta = rospy.get_param("radiation_units_beta")
+		elif self._radiation_units_beta == None:
+			self._radiation_units_beta = "default_value"
+		if rospy.has_param("radiation_units_gamma"):
+			self._radiation_units_gamma = rospy.get_param("radiation_units_gamma")
+		elif self._radiation_units_gamma == None:
+			self._radiation_units_gamma = "default_value"
+		if rospy.has_param("radiation_output_file_format"):
+			self._radiation_output_file_format = rospy.get_param("radiation_output_file_format")
+		elif self._radiation_output_file_format == None:
+			self._radiation_output_file_format = "default_value"
+		
+
+	def read_params(self,f_name):
 
 		"""
 		 function to read useful params from config file
 		"""
-		with open(f_name) as json_file:
-			data = json.load(json_file)
-
-		self._input_map_name = data["input_map"]
-		self._output_map_name = data["output_map"]
-		self._input_rad_map_name = data["radiation_map"]
-		self._outputfile = data["output_filename"]
-		self._radiation_file = data["output_radiation_filename"]
-		self._output_config_file_name = data["output_config_file_name"]
-		self._templates_folder = data["templates_folder"]
-		self._box = data["box"]
-		self._cylinder = data["cylinder"]
-		self._wall_height = data["walls"]
-		self._map_centre = data["map_centre"]
-		self._sizing = data["sizing"]
-		self._metres_per_pixel = data["metres_per_pixel"]
-		self._barrel_pos_noise = data["barrel_pos_noise"]
-		self._barrel_stacking_noise = data["barrel_stacking_noise"]
-		self._object_heights = data["heights"]
-		self._radiation_scaling = data["radiation_scaling"]
-		self._radiation_units_alpha = data["radiation_units_alpha"]
-		self._radiation_units_beta = data["radiation_units_beta"]
-		self._radiation_units_gamma = data["radiation_units_gamma"]
+		if ".json" in f_name:
+			with open(f_name) as json_file:
+				data = json.load(json_file)
+		elif "yaml" in f_name:
+			with open(f_name) as yaml_file:
+				data = yaml.load(yaml_file)		
+		else:
+			data = {}		
+		if "input_map" in data:
+			self._input_map_name = data["input_map"]
+		if "output_map" in data:
+			self._output_map_name = data["output_map"]
+		if "radiation_map" in data:
+			self._input_rad_map_name = data["radiation_map"]
+		if "output_filename" in data:
+			self._outputfile = data["output_filename"]
+		if "output_radiation_filename" in data:
+			self._radiation_file = data["output_radiation_filename"]
+		if "output_config_file_name" in data:
+			self._output_config_file_name = data["output_config_file_name"]
+		if "templates_folder" in data:
+			self._templates_folder = data["templates_folder"]
+		if "box" in data:
+			self._box = data["box"]
+		if "cylinder" in data:
+			self._cylinder = data["cylinder"]
+		if "walls" in data:
+			self._wall_height = data["walls"]
+		if "map_centre" in data:
+			self._map_centre = data["map_centre"]
+		if "sizing" in data:
+			self._sizing = data["sizing"]
+		if "metres_per_pixel" in data:
+			self._metres_per_pixel = data["metres_per_pixel"]
+		if "barrel_pos_noise" in data:
+			self._barrel_pos_noise = data["barrel_pos_noise"]
+		if "barrel_stacking_noise" in data:
+			self._barrel_stacking_noise = data["barrel_stacking_noise"]
+		if "heights" in data:
+			self._object_heights = data["heights"]
+		if "radiation_scaling" in data:
+			self._radiation_scaling = data["radiation_scaling"]
+		if "radiation_units_alpha" in data:
+			self._radiation_units_alpha = data["radiation_units_alpha"]
+		if "radiation_units_beta" in data:
+			self._radiation_units_beta = data["radiation_units_beta"]
+		if "radiation_units_gamma" in data:
+			self._radiation_units_gamma = data["radiation_units_gamma"]
+		if "radiation_output_file_format" in data:
+			self.radiation_output_file_format = data["radiation_output_file_format"]
 		return data
 
 

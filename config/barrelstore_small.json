@@ -9,6 +9,7 @@
 "output_radiation_filename" : "src/gazebosim_world_generator/worlds/base/radiation.yaml",
 "output_config_file_name" : "src/gazebosim_world_generator/worlds/base/radiation.yaml",
 "templates_folder" : "src/gazebosim_world_generator/templates/",
+"radiation_output_file_format" : 0,
 "barrel_pos_noise" : 0.5,
 "barrel_stacking_noise" : 0.1,
 

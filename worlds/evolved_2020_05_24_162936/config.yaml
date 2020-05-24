@@ -1,0 +1,44 @@
+barrel_pos_noise: 0.5
+barrel_stacking_noise: 0.1
+box:
+  colour: 0.3 0.3 0.3 1
+  x: 1.0
+  y: 1.0
+  z: 1.0
+cylinder:
+  colour: 0.5 0.6 0.5 1
+  r: 0.4
+  z: 0.6
+heights:
+  '100': 1
+  '200': 2
+  '255': 3
+input_map: src/gazebosim_world_generator/maps/barrelstore_small.tiff
+map_centre:
+  x: 32
+  y: 32
+map_evolution:
+  number_of_barrels_to_remove: 3
+  number_of_blocks_to_remove: 2
+  number_of_extra_barrels: 3
+  number_of_extra_blocks: 2
+metres_per_pixel: 1
+output_config_file_name: src/gazebosim_world_generator/worlds/base/radiation.yaml
+output_filename: src/gazebosim_world_generator/worlds/evolved_2020_05_24_162936/environment.world
+output_map: src/gazebosim_world_generator/worlds/evolved_2020_05_24_162936/map.tiff
+output_radiation_filename: src/gazebosim_world_generator/worlds/base/radiation.yaml
+radiation_map: src/gazebosim_world_generator/maps/barrelstore_small_radiation.tiff
+radiation_output_file_format: 0
+radiation_scaling: 0.1
+radiation_units_alpha: Sv/h
+radiation_units_beta: Sv/h
+radiation_units_gamma: Sv/h
+sizing:
+  '0': 1.0
+  '100': 0.25
+  '200': 0.5
+  '255': 1.0
+templates_folder: src/gazebosim_world_generator/templates/
+walls:
+  colour: 0.7 0.7 0.7 1
+  height: 3.0

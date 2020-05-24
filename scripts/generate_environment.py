@@ -7,6 +7,7 @@ from gazebosim_world_generator.srv import Gen_Base_World,Gen_Base_WorldResponse
 from datetime import datetime
 import os 
 import json
+import yaml
 from shutil import copyfile
 
 """
@@ -62,7 +63,7 @@ class ServiceCaller(object):
         radiation_name = folder_name +"/radiation.tiff"
         output_map_name = folder_name +"/map.tiff"
         world_name = folder_name +"/environment.world"
-        config_name = folder_name +"/config.json"
+        config_name = folder_name +"/config"
 
 
         print rec.map_file
@@ -81,8 +82,12 @@ class ServiceCaller(object):
         return True
 
     def write_config(self,cf,config_name,output_map_name,world_name,input_map_name):
-        with open(cf) as json_file:
-            data = json.load(json_file)  
+        if ".json" in cf:
+            with open(cf) as json_file:
+                data = json.load(json_file)  
+        elif ".yaml" in cf:
+            with open(cf) as yaml_file:
+                data = yaml.load(yaml_file) 
 
         data["output_map"] =  output_map_name
         data["output_filename"] =  world_name  
@@ -90,9 +95,13 @@ class ServiceCaller(object):
         if input_map_name:
             data["input_map"] =  input_map_name
 
-        with open(config_name, 'w') as outfile:
-            json.dump(data, outfile, indent=4, sort_keys=True)
-        
+        if ".json" in cf:
+            with open(config_name+"json", 'w') as outfile:
+                json.dump(data, outfile, indent=4, sort_keys=True)
+        elif ".yaml" in cf:
+            with open(config_name+".yaml", 'w') as outfile:
+                yaml.safe_dump(data, outfile, default_flow_style=False)
+
         return data["input_map"],data["radiation_map"]
 
 

@@ -4,6 +4,7 @@ import numpy as np
 import random
 import cv2
 import json
+import yaml
 import random
 import os
 
@@ -20,7 +21,7 @@ This could be checked by rather than just choosing a nsew neighbour, selecting t
 class Evolve(object):
 	def __init__(self,param_file,input_map_name = None,output_map_name = None):
 
-		self._json_dict = self.read_json(param_file)
+		self._json_dict = self.read_param(param_file)
 		if output_map_name:
 			self._output_map_name = output_map_name
 		if input_map_name:
@@ -35,20 +36,32 @@ class Evolve(object):
 		self.save_img()
 	
 
-	def read_json(self,f_name):
+	def read_param(self,f_name):
 
 		"""
 			Loads parameters from json file required for evolving an environment
 		"""
-		with open(f_name) as json_file:
-			data = json.load(json_file)
+		if ".json" in f_name:
+			with open(f_name) as json_file:
+				data = json.load(json_file)
+		elif "yaml" in f_name:
+			with open(f_name) as yaml_file:
+				data = yaml.load(yaml_file)		
+		else:
+			data = {}
 
-		self._input_map_name = data["input_map"]
-		self._output_map_name = data["output_map"]
-		self._outputfile = data["output_filename"]
-		self._object_heights = data["heights"]
-		self._sizing = data["sizing"]
-		self._evolution = data["map_evolution"]
+		if "input_map" in data:
+			self._input_map_name = data["input_map"]
+		if "output_map" in data:
+			self._output_map_name = data["output_map"]
+		if "output_filename" in data:
+			self._outputfile = data["output_filename"]
+		if "heights" in data:
+			self._object_heights = data["heights"]
+		if "sizing" in data:
+			self._sizing = data["sizing"]
+		if "map_evolution" in data:
+			self._evolution = data["map_evolution"]
 
 		return data
 
