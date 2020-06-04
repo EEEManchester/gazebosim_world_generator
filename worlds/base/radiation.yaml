@@ -3,7 +3,7 @@ sources:
     noise: 2.0
     type: alpha
     units: Sv/h
-    value: 25.5
+    value: 100.0
     x: -15
     y: -15
     z: 0
@@ -11,7 +11,7 @@ sources:
     noise: 2.0
     type: alpha
     units: Sv/h
-    value: 25.5
+    value: 200.0
     x: -15
     y: -14
     z: 0
@@ -19,7 +19,7 @@ sources:
     noise: 2.0
     type: alpha
     units: Sv/h
-    value: 25.5
+    value: 300.0
     x: -15
     y: -13
     z: 0
@@ -27,7 +27,7 @@ sources:
     noise: 2.0
     type: beta
     units: Sv/h
-    value: 25.5
+    value: 400.0
     x: -5
     y: -15
     z: 0
@@ -35,7 +35,7 @@ sources:
     noise: 2.0
     type: gamma
     units: Sv/h
-    value: 25.5
+    value: 500.0
     x: -5
     y: -7
     z: 0
@@ -43,7 +43,7 @@ sources:
     noise: 2.0
     type: gamma
     units: Sv/h
-    value: 25.5
+    value: 600.0
     x: -5
     y: 0
     z: 0
@@ -51,7 +51,7 @@ sources:
     noise: 2.0
     type: gamma
     units: Sv/h
-    value: 25.5
+    value: 700.0
     x: -5
     y: 4
     z: 0
