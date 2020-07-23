@@ -1,22 +1,26 @@
-      <pose frame=''>0.0 -0.0 0.5 0 -0 0</pose>
+    <model name='{name}'>
+      <pose frame='sim_world'>{pose}</pose>
       <static>True</static>
-      <link name='link'>
+      <link name='{name}_link'>
         <inertial>
           <mass>100</mass>
           <inertia>
-            <ixx>0.166667</ixx>
+            <ixx>0.145833</ixx>
             <ixy>0</ixy>
             <ixz>0</ixz>
-            <iyy>0.166667</iyy>
+            <iyy>0.145833</iyy>
             <iyz>0</iyz>
-            <izz>0.166667</izz>
+            <izz>0.125</izz>
           </inertia>
         </inertial>
-        <collision name='collision'>
+        <collision name='{name}_collision'>
           <geometry>
-            <box>
+            <cylinder>
+              <length>{length}</length>
+              <radius>{radius}</radius>
+            </cylinder>
           </geometry>
-          <max_contacts>10</max_contacts>
+          <max_contacts>100</max_contacts>
           <surface>
             <contact>
               <ode/>
@@ -30,13 +34,20 @@
             </friction>
           </surface>
         </collision>
-        <visual name='visual'>
+        <visual name='{name}_visual'>
           <geometry>
-            <box>
+            <cylinder>
+              <length>{length}</length>
+              <radius>{radius}</radius>
+            </cylinder>
           </geometry>
           <material>
+            <ambient>{colour}</ambient>
+            <diffuse>{colour}</diffuse>
+          </material>
         </visual>
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
     </model>

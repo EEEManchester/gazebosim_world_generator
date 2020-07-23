@@ -22,7 +22,7 @@ map_evolution:
   number_of_blocks_to_remove: 2
   number_of_extra_barrels: 3
   number_of_extra_blocks: 2
-metres_per_pixel: 1
+metres_per_pixel: 0.5
 output_config_file_name: src/gazebosim_world_generator/worlds/base/radiation.yaml
 output_filename: src/gazebosim_world_generator/worlds/base/base_environment.world
 output_map: src/gazebosim_world_generator/worlds/base/barrelstore.tiff
@@ -42,3 +42,10 @@ templates_folder: src/gazebosim_world_generator/templates/
 walls:
   colour: 0.7 0.7 0.7 1
   height: 3.0
+custom_models:
+  barrel:
+    name: barrel
+    value: 125 125 125
+    z_offset: 0.5
+    dae_location: "/home/tom/ROS/custom_gazebo_sensor/catkin_ws/src/gazebo_radiation_plugin/custom_models/barrel/models/barrel.dae"
+    

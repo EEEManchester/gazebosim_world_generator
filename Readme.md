@@ -8,6 +8,12 @@ The repository contains a ROS node called generate_environment which when runnin
 
 These services require a config file to be passed and optionally can also be passed a map(image) to overwrite the image defined in the config file. This allows a generic config file to be applied to different maps.
 
+#### Recent updateds
+
+* Custom dae models can now be used!!!
+* Fixed issue with loading variables from the param server
+  
+
 ## Drawing a map
 
 An example of how to draw the maps can be seen in the video in the media folder. Here you can see that (currently) the maps have three types of objects, being walls, boxes and cylinders. Walls never move where as boxes and cylinders can be moved around using the Evolve_world service. The convention used for drawing maps is:
@@ -15,6 +21,7 @@ An example of how to draw the maps can be seen in the video in the media folder.
 * Walls are black
 * Cubes are red
 * Cylinders are blue
+* Custom models can now be specified with specific rgb colour codes **NB: See the challenge1 yaml file for how an example of how to use custom models**
 
 The green channel is reserved for generating none standard sized objects. This will be discussed in section Config File.
 
@@ -23,6 +30,8 @@ One a world has been drawn, it needs to be saved as an image. I suggest using .t
 For examples of environemts see the maps folder.
 
 ## The Config File
+
+Both Yaml and Json are now supported.
 
 A example config file can be found in the config folder. 
 These files are used to layout all of the parameters which are needed for using the map builder.

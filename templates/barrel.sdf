@@ -1,0 +1,26 @@
+  <model name="{name}">
+    <pose>{pose}</pose>
+    <static>true</static>
+    <link name="link_{name}">
+      <collision name="collision_{name}">
+        <geometry>
+          <mesh><uri>{dae_location}</uri></mesh>
+        </geometry>
+      </collision>
+      <visual name="visual_{name}">
+        <geometry>
+          <mesh><uri>{dae_location}</uri></mesh>
+        </geometry>
+        <material>
+          <!--These ogre scripts can be used to overwrite the texture if required -->
+          <!--
+          <script>
+            <uri>model://materials/scripts/barrel.material</uri>
+            <name>defaultBarrelTexture</name>
+          </script>
+          -->
+          </material>
+      </visual>
+    </link>
+  </model>
+

@@ -19,7 +19,13 @@ class Environment(object):
 	def __init__(self,param_file,input_map_name = None,out_file_name=None,input_rad_map_name = None):
 
 		self._json_dict = self.read_params(param_file)
-		self.check_param_server()
+		prefix = input_map_name.split('/')[-1].split('.')[0]+'/'
+
+		self.check_param_server(prefix)
+		if bool(self._json_dict) == False:
+			self._json_dict = rospy.get_param(prefix[:-1])
+
+		print self._json_dict
 
 		if out_file_name:
 			self._outputfile = out_file_name
@@ -39,7 +45,7 @@ class Environment(object):
 
 		print self._input_rad_map_name
 
-		if (self._input_rad_map_name  != None) & (self._input_rad_map_name != ""):
+		if (self._input_rad_map_name  != None) & (self._input_rad_map_name != "")& (self._input_rad_map_name != "None"):
 			self.load_radiation()
 
 		self.gen_objects()
@@ -66,7 +72,7 @@ class Environment(object):
 				if not ((a[0] == 0) &(a[1] == 0) & (a[2] == 0) | (a[0] == 255) &(a[1] == 255) & (a[2] == 255)):
 					x = (j - self._map_centre["x"])*self._metres_per_pixel 
 					y = (i - self._map_centre["y"])*self._metres_per_pixel
-					if self.radiation_output_file_format == 0:
+					if self._radiation_output_file_format == 0:
 						if (a[0] > 0):
 							sources["source_"+str(count)] = {'x':x,'y':y,'z':0,'value':float(a[0]*self._radiation_scaling),'type':'alpha','units':str(self._radiation_units_alpha),'noise':2.0}
 							count +=1
@@ -76,7 +82,7 @@ class Environment(object):
 						if (a[2] > 0):
 							sources["source_"+str(count)] = {'x':x,'y':y,'z':0,'value':float(a[2]*self._radiation_scaling),'type':'gamma','units':str(self._radiation_units_gamma),'noise':2.0}
 							count +=1
-					elif self.radiation_output_file_format == 1:
+					elif self._radiation_output_file_format == 1:
 						if (a[0] > 0):
 							sources["source_"+str(count)] = {'x':x},{'y':y},{'z':0},{'value':float(a[0]*self._radiation_scaling)},{'type':'alpha'},{'units':str(self._radiation_units_alpha)},{'noise':2.0}
 							count +=1
@@ -93,6 +99,7 @@ class Environment(object):
 
 		#with open(self._radiation_file+".json", 'w') as outfile:
 	 	#	json.dump(s, outfile[:-4]+"json", indent=4)
+
 
 		with open(self._radiation_file, 'w') as outfile:
 	 		yaml.dump(s, outfile, default_flow_style=False)
@@ -117,103 +124,119 @@ class Environment(object):
 
 
 		black = cv2.cvtColor(self._img, cv2.COLOR_BGR2GRAY)
+		white = (blue/3.0) +(red/3.0) + (green/3.0)
+		ret,white = cv2.threshold(white,250,255,cv2.THRESH_BINARY)
 
-		self._barrels = blue -r_max
-		self._blocks = red -b_max
-		self._size_array = green 
+		#try removing white by filtering on the gray image!!! the you can use custom colours!!!
+		blue_no_white = (blue -white)
+		red_no_white = (red -white)
+
+
+		self._barrels = blue_no_white- r_max
+		self._blocks =  red_no_white - b_max
+		self._size_array = green -white
 		ret,self._walls = cv2.threshold(black,1,255,cv2.THRESH_BINARY_INV)
 		self._barrels = self._barrels.clip(min=0).astype(int)
 		self._blocks = self._blocks.clip(min=0).astype(int)
 		self._size_array = self._size_array.clip(min=0).astype(int)
 
-	def check_param_server(self):
+		leftovers = (blue_no_white-self._barrels) + (red_no_white-self._blocks) + self._size_array
+		ret,mask = cv2.threshold(leftovers,1,255,cv2.THRESH_BINARY)
+		self._custom = self._img
+		self._custom[mask==0] = [0,0,0,0]
+
+	def check_param_server(self,prefix):
 
 		"allows setting of default values if not provided through either the config file or loaded into rosparam server"
 
-		if rospy.has_param("input_map"):
-			self._input_map = rospy.get_param("input_map")
-		elif self._input_map == None:
-			self._input_map = "default_value"
-		if rospy.has_param("output_map"):
-			self._output_map = rospy.get_param("output_map")
-		elif self._output_map == None:
-			self._output_map = "default_value"
-		if rospy.has_param("radiation_map"):
-			self._input_rad_map_name = rospy.get_param("radiation_map")
+		if rospy.has_param(prefix+"input_map"):
+			self._input_map_name = rospy.get_param(prefix+"input_map")
+		elif self._input_map_name == None:
+			self._input_map_name = "default_value"
+		if rospy.has_param(prefix+"output_map"):
+			self._output_map_name = rospy.get_param(prefix+"output_map")
+		elif self._output_map_name == None:
+			self._output_map_name = "default_value"
+		if rospy.has_param(prefix+"radiation_map"):
+			self._input_rad_map_name = rospy.get_param(prefix+"radiation_map")
 		elif self._input_rad_map_name == None:
 			self._input_rad_map_name = "default_value"
-		if rospy.has_param("output_filename"):
-			self._outputfile = rospy.get_param("output_filename")
+		if rospy.has_param(prefix+"output_filename"):
+			self._outputfile = rospy.get_param(prefix+"output_filename")
 		elif self._outputfile == None:
 			self._outputfile = "default_value"
-		if rospy.has_param("output_radiation_filename"):
-			self._radiation_file = rospy.get_param("output_radiation_filename")
+		if rospy.has_param(prefix+"output_radiation_filename"):
+			self._radiation_file = rospy.get_param(prefix+"output_radiation_filename")
 		elif self._radiation_file == None:
 			self._radiation_file = "default_value"
-		if rospy.has_param("output_config_file_name"):
-			self._output_config_file_name = rospy.get_param("output_config_file_name")
+		if rospy.has_param(prefix+"output_config_file_name"):
+			self._output_config_file_name = rospy.get_param(prefix+"output_config_file_name")
 		elif self._output_config_file_name == None:
 			self._output_config_file_name = "default_value"
-		if rospy.has_param("templates_folder"):
-			self._templates_folder = rospy.get_param("templates_folder")
+		if rospy.has_param(prefix+"templates_folder"):
+			self._templates_folder = rospy.get_param(prefix+"templates_folder")
 		elif self._templates_folder == None:
 			self._templates_folder = "default_value"
-		if rospy.has_param("box"):
-			self._box = rospy.get_param("box")
+		if rospy.has_param(prefix+"box"):
+			self._box = rospy.get_param(prefix+"box")
 		elif self._box == None:
 			self._box = "default_value"
-		if rospy.has_param("cylinder"):
-			self._cylinder = rospy.get_param("cylinder")
+		if rospy.has_param(prefix+"cylinder"):
+			self._cylinder = rospy.get_param(prefix+"cylinder")
 		elif self._cylinder == None:
 			self._cylinder = "default_value"
-		if rospy.has_param("walls"):
-			self._walls = rospy.get_param("walls")
-		elif self._walls == None:
-			self._walls = "default_value"
-		if rospy.has_param("map_centre"):
-			self._map_centre = rospy.get_param("map_centre")
+		if rospy.has_param(prefix+"walls"):
+			self._wall_height = rospy.get_param(prefix+"walls")
+		elif self._wall_height == None:
+			self._wall_height = "default_value"
+		if rospy.has_param(prefix+"map_centre"):
+			self._map_centre = rospy.get_param(prefix+"map_centre")
 		elif self._map_centre == None:
 			self._map_centre = "default_value"
-		if rospy.has_param("sizing"):
-			self._sizing = rospy.get_param("sizing")
+		if rospy.has_param(prefix+"sizing"):
+			self._sizing = rospy.get_param(prefix+"sizing")
 		elif self._sizing == None:
 			self._sizing = "default_value"
-		if rospy.has_param("metres_per_pixel"):
-			self._metres_per_pixel = rospy.get_param("metres_per_pixel")
+		if rospy.has_param(prefix+"metres_per_pixel"):
+			self._metres_per_pixel = rospy.get_param(prefix+"metres_per_pixel")
 		elif self._metres_per_pixel == None:
 			self._metres_per_pixel = "default_value"
-		if rospy.has_param("barrel_pos_noise"):
-			self._barrel_pos_noise = rospy.get_param("barrel_pos_noise")
+		if rospy.has_param(prefix+"barrel_pos_noise"):
+			self._barrel_pos_noise = rospy.get_param(prefix+"barrel_pos_noise")
 		elif self._barrel_pos_noise == None:
 			self._barrel_pos_noise = "default_value"
-		if rospy.has_param("barrel_stacking_noise"):
-			self._barrel_stacking_noise = rospy.get_param("barrel_stacking_noise")
+		if rospy.has_param(prefix+"barrel_stacking_noise"):
+			self._barrel_stacking_noise = rospy.get_param(prefix+"barrel_stacking_noise")
 		elif self._barrel_stacking_noise == None:
 			self._barrel_stacking_noise = "default_value"
-		if rospy.has_param("heights"):
-			self._heights = rospy.get_param("heights")
-		elif self._heights == None:
-			self._heights = "default_value"
-		if rospy.has_param("radiation_scaling"):
-			self._radiation_scaling = rospy.get_param("radiation_scaling")
+		if rospy.has_param(prefix+"heights"):
+			self._object_heights = rospy.get_param(prefix+"heights")
+		elif self._object_heights == None:
+			self._object_heights = "default_value"
+		if rospy.has_param(prefix+"radiation_scaling"):
+			self._radiation_scaling = rospy.get_param(prefix+"radiation_scaling")
 		elif self._radiation_scaling == None:
 			self._radiation_scaling = "default_value"
-		if rospy.has_param("radiation_units_alpha"):
-			self._radiation_units_alpha = rospy.get_param("radiation_units_alpha")
+		if rospy.has_param(prefix+"radiation_units_alpha"):
+			self._radiation_units_alpha = rospy.get_param(prefix+"radiation_units_alpha")
 		elif self._radiation_units_alpha == None:
 			self._radiation_units_alpha = "default_value"
-		if rospy.has_param("radiation_units_beta"):
-			self._radiation_units_beta = rospy.get_param("radiation_units_beta")
+		if rospy.has_param(prefix+"radiation_units_beta"):
+			self._radiation_units_beta = rospy.get_param(prefix+"radiation_units_beta")
 		elif self._radiation_units_beta == None:
 			self._radiation_units_beta = "default_value"
-		if rospy.has_param("radiation_units_gamma"):
-			self._radiation_units_gamma = rospy.get_param("radiation_units_gamma")
+		if rospy.has_param(prefix+"radiation_units_gamma"):
+			self._radiation_units_gamma = rospy.get_param(prefix+"radiation_units_gamma")
 		elif self._radiation_units_gamma == None:
 			self._radiation_units_gamma = "default_value"
-		if rospy.has_param("radiation_output_file_format"):
-			self._radiation_output_file_format = rospy.get_param("radiation_output_file_format")
+		if rospy.has_param(prefix+"radiation_output_file_format"):
+			self._radiation_output_file_format = rospy.get_param(prefix+"radiation_output_file_format")
 		elif self._radiation_output_file_format == None:
 			self._radiation_output_file_format = "default_value"
+		if rospy.has_param(prefix+"custom_models"):
+			self._custom_models = rospy.get_param(prefix+"custom_models")
+		elif self._custom_models == None:
+			self._custom_models = None
 		
 
 	def read_params(self,f_name):
@@ -270,7 +293,10 @@ class Environment(object):
 		if "radiation_units_gamma" in data:
 			self._radiation_units_gamma = data["radiation_units_gamma"]
 		if "radiation_output_file_format" in data:
-			self.radiation_output_file_format = data["radiation_output_file_format"]
+			self._radiation_output_file_format = data["radiation_output_file_format"]
+		if "custom_models" in data:
+			self._custom_models = data["custom_models"]
+				
 		return data
 
 
@@ -285,17 +311,18 @@ class Environment(object):
 			file(self._outputfile, 'w').close()
 
 
-		open(self._outputfile, "w").writelines([l for l in open(self._templates_folder+"headerfile.txt").readlines()])
+		open(self._outputfile, "w").writelines([l for l in open(self._templates_folder+"headerfile.sdf").readlines()])
 
 		self.gen_walls()
 		self.populate(self._blocks,"box")
 		self.populate(self._barrels,"cylinder")
 		self.populate(self._walls,"box")
+		self.populate(self._custom,"custom")
 		
 
-		open(self._outputfile, "a").writelines([l for l in open(self._templates_folder+"ground_plane.txt").readlines()])
+		open(self._outputfile, "a").writelines([l for l in open(self._templates_folder+"ground_plane.sdf").readlines()])
 
-		open(self._outputfile, "a").writelines([l for l in open(self._templates_folder+"endfile.txt").readlines()])
+		open(self._outputfile, "a").writelines([l for l in open(self._templates_folder+"endfile.sdf").readlines()])
 
 
 	def gen_walls(self):
@@ -392,28 +419,18 @@ class Environment(object):
 			width = i[1][0] -i[0][0]	+ 1.0
 			length = i[1][1] - i[0][1]	+ 1.0
 
-			boxName =     "<model name='wall_"+ str(count) +"'>\n"  	
+			name = "wall_"+ str(count) 
+			pose = str(self.array_to_map(centre_pos_x,"x")) + " " + str(self.array_to_map(centre_pos_y,"y")) + " " + str(float(self._wall_height["height"])/2.0) + " 0 0 0"
+			size = str(width*self._metres_per_pixel) + " " + str(length*self._metres_per_pixel) + " " + str(self._wall_height["height"])
+			colour = str(self._wall_height["colour"])
+			keywords = {'name': name, 'pose': pose, 'size': size, 'colour': colour}			
 			count +=1
-			open(self._outputfile, "a").writelines([boxName])
-			with open(self._templates_folder+"{}1.txt".format(f_name)) as f:
+			open(self._outputfile, "a")
+			with open(self._templates_folder+"{}.sdf".format(f_name)) as f:
 				with open(self._outputfile, "a") as f1:
 					for line in f:
-						if "pose frame" in line:
-							poseLine = "<pose frame=''>" + str(self.array_to_map(centre_pos_x,"x")) + " " + str(self.array_to_map(centre_pos_y,"x")) + " " + str(float(self._wall_height["height"])/2.0) +" 0 -0 0</pose> \n"
-							f1.write(poseLine)
-						elif "box" in line:
-							f1.write(line)
-							sizeLine = "<size>" + str(width*self._metres_per_pixel) + " " + str(length*self._metres_per_pixel) + " " + str(self._wall_height["height"]) +"</size> \n"
-							f1.write(sizeLine)
-							f1.write("</box>")
-						elif "material" in line:
-							f1.write(line)
-							f1.write("<ambient>" +str(self._wall_height["colour"]) + "</ambient> \n")
-							f1.write("<diffuse>" +str(self._wall_height["colour"]) + "</diffuse> \n")
-							f1.write("</material>")
 
-						else:
-							f1.write(line) 
+						f1.write(line.format('',**keywords)) 
 										
 
 
@@ -421,47 +438,70 @@ class Environment(object):
 		"""
 		Add to the sdf file for generating the gazebo world
 		"""
+
 		count = 0
 		for x_index in range (0,array.shape[0]):
 			for y_index in range (0,array.shape[1]):
-				if array[x_index][y_index] > 1:
-					noise_x = self.noise(self._barrel_pos_noise)
-					noise_y = self.noise(self._barrel_pos_noise)
-					for z_index in range (0,self._object_heights[str(array[x_index][y_index])]):				
-							boxName =     "<model name='unit_{}_".format(f_name)+ str(count) +"'>\n"  	
-							open(self._outputfile, "a").writelines([boxName])
-							with open(self._templates_folder+"{}1.txt".format(f_name)) as f:
+				if type(array[x_index][y_index]) is np.ndarray:
+					test = sum(array[x_index][y_index])
+				else:
+					test = array[x_index][y_index]
+				if test > 1:
+					keywords = {'name': '','pose':'','radius': '','length': '','radius': '','size': '','colour': ''}
+					if f_name == "custom":
+						for c in self._custom_models:
+							col = np.asarray((self._custom_models[c]["value"].lstrip().split(" ")),dtype=int)	
+							if (col[0] == array[x_index][y_index][0]) & (col[1] == array[x_index][y_index][1]) & (col[2] == array[x_index][y_index][2]):		
+								name = self._custom_models[c]["name"]
+								if self._custom_models[c]["pose_noise"]:
+									n = self._custom_models[c]["pose_noise"]
+								else:
+									n = 0.0
+								noise_x = self.noise(n)
+								noise_y = self.noise(n)
+								keywords['name'] =     name+"_"+str(count)  
+								keywords['pose'] = str(self.array_to_map(x_index,"x")+noise_x) + " " + str(self.array_to_map(y_index,"y")+noise_y) + " " + str(self._custom_models[c]["z_offset"]) +" 0 -0 0"	
+								keywords['dae_location'] = self._custom_models[c]["dae_location"]
+								print keywords
+								open(self._outputfile, "a")
+								with open(self._templates_folder+"{}.sdf".format(name)) as f:
+									with open(self._outputfile, "a") as f1:
+										for line in f:
+											f1.write(line.format('',**keywords)) 
+						count +=1
+
+					else:		
+						if f_name == "cylinder":
+							noise_x = self.noise(self._barrel_pos_noise)
+							noise_y = self.noise(self._barrel_pos_noise)
+							name = "cylinder"
+							keywords['radius'] = self._cylinder["r"]*self._metres_per_pixel
+							keywords['length'] = self._cylinder["z"]*self._metres_per_pixel
+						elif f_name == 'box':	
+							name = "box"
+							if self._size_array[x_index][y_index] == 0:
+								keywords['size'] = str(self._box["x"]*self._metres_per_pixel) + " " + str(self._box["y"]*self._metres_per_pixel) + " " + str(self._box["z"]*self._metres_per_pixel)
+							else:		
+								keywords['size'] = str(self._sizing[str(self._size_array[x_index][y_index])]*self._metres_per_pixel) + " " + str(self._sizing[str(self._size_array[x_index][y_index])]*self._metres_per_pixel) + " " + str(self._sizing[str(self._size_array[x_index][y_index])]*self._metres_per_pixel)
+
+						if self._json_dict[name]["colour"]:
+							keywords['colour'] = self._json_dict[name]["colour"]
+
+						for z_index in range (0,self._object_heights[str(array[x_index][y_index])]):				
+							keywords['name'] =     name+"_"+str(count)  	
+							if name == "cylinder":
+								keywords['pose'] = str(self.array_to_map(x_index,"x") +noise_x + self.noise(self._barrel_stacking_noise)) + " " + str(self.array_to_map(y_index,"y") + noise_y + self.noise(self._barrel_stacking_noise)) + " " + str(((self._json_dict[f_name]["z"]*z_index)+(self._json_dict[f_name]["z"])/2.0)*self._metres_per_pixel*self._sizing[str(self._size_array[x_index][y_index])]) +" 0 -0 0"			
+							elif name == 'box':
+								keywords['pose'] = str(self.array_to_map(x_index,"x")) + " " + str(self.array_to_map(y_index,"y")) + " " + str(((self._json_dict[f_name]["z"]*z_index)+(self._json_dict[f_name]["z"])/2.0)*self._metres_per_pixel*self._sizing[str(self._size_array[x_index][y_index])]) +" 0 -0 0"
+							
+							open(self._outputfile, "a")
+							with open(self._templates_folder+"{}.sdf".format(name)) as f:
 								with open(self._outputfile, "a") as f1:
 									for line in f:
-										if "pose frame" in line:
-											if f_name == "cylinder":
-												poseLine = "<pose frame=''>" + str(self.array_to_map(x_index,"x") +noise_x + self.noise(self._barrel_stacking_noise)) + " " + str(self.array_to_map(y_index,"y") + noise_y + self.noise(self._barrel_stacking_noise)) + " " + str(((self._json_dict[f_name]["z"]*z_index)+(self._json_dict[f_name]["z"])/2.0)*self._metres_per_pixel*self._sizing[str(self._size_array[x_index][y_index])]) +" 0 -0 0</pose> \n"
-											else:	
-												poseLine = "<pose frame=''>" + str(self.array_to_map(x_index,"x")) + " " + str(self.array_to_map(y_index,"y")) + " " + str(((self._json_dict[f_name]["z"]*z_index)+(self._json_dict[f_name]["z"])/2.0)*self._metres_per_pixel*self._sizing[str(self._size_array[x_index][y_index])]) +" 0 -0 0</pose> \n"
-											f1.write(poseLine)
-										elif "cylinder" in line:
-											f1.write(line)
-											f1.write("<radius>{}</radius> \n".format(self._cylinder["r"]*self._metres_per_pixel))
-											f1.write("<length>{}</length> \n".format(self._cylinder["z"]*self._metres_per_pixel))
-											f1.write("</cylinder> \n")
-										elif "box" in line:
-											f1.write(line)
-											if self._size_array[x_index][y_index] == 0:
-												sizeLine = "<size>" + str(self._box["x"]*self._metres_per_pixel) + " " + str(self._box["y"]*self._metres_per_pixel) + " " + str(self._box["z"]*self._metres_per_pixel) +"</size> \n"
-											else:
-												
-												sizeLine = "<size>" + str(self._sizing[str(self._size_array[x_index][y_index])]*self._metres_per_pixel) + " " + str(self._sizing[str(self._size_array[x_index][y_index])]*self._metres_per_pixel) + " " + str(self._sizing[str(self._size_array[x_index][y_index])]*self._metres_per_pixel) +"</size> \n"
-											f1.write(sizeLine)
-											f1.write("</box>")
-										elif "material" in line:
-											f1.write(line)
-											f1.write("<ambient>" +self._json_dict[f_name]["colour"] + "</ambient> \n")
-											f1.write("<diffuse>" +self._json_dict[f_name]["colour"] + "</diffuse> \n")
-											f1.write("</material>")
-										else:
-											f1.write(line) 
+										f1.write(line.format('',**keywords)) 
 
 							count +=1
+
 	def noise(self,n):
 		"""
 		Noise for placement of barrels. Limited to avoid collisions
