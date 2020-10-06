@@ -41,12 +41,14 @@ class Environment(object):
 
 		self._img = cv2.imread(self._input_map_name,cv2.IMREAD_UNCHANGED)
 		cv2.imwrite(self._output_map_name,self._img)
-		self._rad = cv2.imread(self._input_rad_map_name,cv2.IMREAD_UNCHANGED)
+		
 
-		print self._input_rad_map_name
+		
 
-		if (self._input_rad_map_name  != None) & (self._input_rad_map_name != "")& (self._input_rad_map_name != "None"):
-			self.load_radiation()
+		#if (self._input_rad_map_name != None): 
+		#	if (self._input_rad_map_name != "")& (self._input_rad_map_name != "None"):
+		#		self._rad = cv2.imread(self._input_rad_map_name,cv2.IMREAD_UNCHANGED)
+		#		self.load_radiation()
 
 		self.gen_objects()
 		
@@ -143,8 +145,10 @@ class Environment(object):
 		leftovers = (blue_no_white-self._barrels) + (red_no_white-self._blocks) + self._size_array
 		ret,mask = cv2.threshold(leftovers,1,255,cv2.THRESH_BINARY)
 		self._custom = self._img
-		self._custom[mask==0] = [0,0,0,0]
-
+		try:
+			self._custom[mask==0] = [0,0,0,0]
+		except:
+			self._custom[mask==0] = [0,0,0]
 	def check_param_server(self,prefix):
 
 		"allows setting of default values if not provided through either the config file or loaded into rosparam server"
@@ -159,16 +163,12 @@ class Environment(object):
 			self._output_map_name = "default_value"
 		if rospy.has_param(prefix+"radiation_map"):
 			self._input_rad_map_name = rospy.get_param(prefix+"radiation_map")
-		elif self._input_rad_map_name == None:
-			self._input_rad_map_name = "default_value"
 		if rospy.has_param(prefix+"output_filename"):
 			self._outputfile = rospy.get_param(prefix+"output_filename")
 		elif self._outputfile == None:
 			self._outputfile = "default_value"
 		if rospy.has_param(prefix+"output_radiation_filename"):
 			self._radiation_file = rospy.get_param(prefix+"output_radiation_filename")
-		elif self._radiation_file == None:
-			self._radiation_file = "default_value"
 		if rospy.has_param(prefix+"output_config_file_name"):
 			self._output_config_file_name = rospy.get_param(prefix+"output_config_file_name")
 		elif self._output_config_file_name == None:
@@ -331,21 +331,31 @@ class Environment(object):
 		function to generate the walls as a single object rather than an array of boxes to reduce computational load
 		"""
 
-		horizontal_walls = self.find_walls(self._walls)
-		self.clear_walls(horizontal_walls)
+
 		vertical_walls = self.find_walls(np.transpose(self._walls),1)
 		self.clear_walls(vertical_walls)
+		horizontal_walls = self.find_walls(self._walls)
+		self.clear_walls(horizontal_walls)
 		remaining = self.find_remaining_walls(self._walls)
 		self.clear_walls(remaining)
 
+		print "vertical_walls",vertical_walls
+		print "horizontal_walls",horizontal_walls
+		print "remaining",remaining
+
 		walls_list =  [vertical_walls,remaining]
-		
+
 		walls = horizontal_walls
+
 		for i in walls_list:
-			try:
+			print i
+
+		for i in walls_list:
+			if len(i) > 0:
 				walls = np.concatenate((walls,i),0)
-			except:
-				pass
+			
+
+		print "walls", walls
 
 		self.place_walls(walls,"box")
 
@@ -414,6 +424,7 @@ class Environment(object):
 		"""
 		count = 0
 		for i in walls:
+			print walls
 			centre_pos_x = (i[0][0] + i[1][0])/2.0 
 			centre_pos_y = (i[0][1] + i[1][1])/2.0 
 			width = i[1][0] -i[0][0]	+ 1.0
@@ -429,8 +440,9 @@ class Environment(object):
 			with open(self._templates_folder+"{}.sdf".format(f_name)) as f:
 				with open(self._outputfile, "a") as f1:
 					for line in f:
-
+				
 						f1.write(line.format('',**keywords)) 
+			print "wall written"
 										
 
 
