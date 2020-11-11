@@ -1,0 +1,17 @@
+  <model name="{name}">
+    <pose>{pose}</pose>
+    <static>true</static>
+    <link name="link_{name}">
+      <collision name="collision_{name}">
+        <geometry>
+          <mesh><uri>{dae_location}</uri></mesh>
+        </geometry>
+      </collision>
+      <visual name="visual_{name}">
+        <geometry>
+          <mesh><uri>{dae_location}</uri></mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+

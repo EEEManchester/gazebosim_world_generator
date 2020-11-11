@@ -20,7 +20,7 @@ class Environment(object):
 
 		self._json_dict = self.read_params(param_file)
 		prefix = input_map_name.split('/')[-1].split('.')[0]+'/'
-
+		self._prefix = prefix
 		self.check_param_server(prefix)
 		if bool(self._json_dict) == False:
 			self._json_dict = rospy.get_param(prefix[:-1])
@@ -152,6 +152,9 @@ class Environment(object):
 	def check_param_server(self,prefix):
 
 		"allows setting of default values if not provided through either the config file or loaded into rosparam server"
+
+		print prefix
+	
 
 		if rospy.has_param(prefix+"input_map"):
 			self._input_map_name = rospy.get_param(prefix+"input_map")
@@ -450,6 +453,10 @@ class Environment(object):
 		"""
 		Add to the sdf file for generating the gazebo world
 		"""
+		if len(array) == 0:
+			return
+
+	
 
 		count = 0
 		for x_index in range (0,array.shape[0]):
@@ -476,7 +483,7 @@ class Environment(object):
 								keywords['dae_location'] = self._custom_models[c]["dae_location"]
 								print keywords
 								open(self._outputfile, "a")
-								with open(self._templates_folder+"{}.sdf".format(name)) as f:
+								with open(self._templates_folder+"{}.sdf".format(f_name)) as f:
 									with open(self._outputfile, "a") as f1:
 										for line in f:
 											f1.write(line.format('',**keywords)) 
@@ -496,15 +503,21 @@ class Environment(object):
 							else:		
 								keywords['size'] = str(self._sizing[str(self._size_array[x_index][y_index])]*self._metres_per_pixel) + " " + str(self._sizing[str(self._size_array[x_index][y_index])]*self._metres_per_pixel) + " " + str(self._sizing[str(self._size_array[x_index][y_index])]*self._metres_per_pixel)
 
-						if self._json_dict[name]["colour"]:
-							keywords['colour'] = self._json_dict[name]["colour"]
+						print self._json_dict[self._prefix[:-1]]
+						if self._json_dict[self._prefix[:-1]][name]["colour"]:
+							keywords['colour'] = self._json_dict[self._prefix[:-1]][name]["colour"]
 
-						for z_index in range (0,self._object_heights[str(array[x_index][y_index])]):				
+
+						try:
+							stack = self._object_heights[str(array[x_index][y_index])]
+						except:
+							stack = 1
+						for z_index in range (0,stack):				
 							keywords['name'] =     name+"_"+str(count)  	
 							if name == "cylinder":
-								keywords['pose'] = str(self.array_to_map(x_index,"x") +noise_x + self.noise(self._barrel_stacking_noise)) + " " + str(self.array_to_map(y_index,"y") + noise_y + self.noise(self._barrel_stacking_noise)) + " " + str(((self._json_dict[f_name]["z"]*z_index)+(self._json_dict[f_name]["z"])/2.0)*self._metres_per_pixel*self._sizing[str(self._size_array[x_index][y_index])]) +" 0 -0 0"			
+								keywords['pose'] = str(self.array_to_map(x_index,"x") +noise_x + self.noise(self._barrel_stacking_noise)) + " " + str(self.array_to_map(y_index,"y") + noise_y + self.noise(self._barrel_stacking_noise)) + " " + str(((self._json_dict[self._prefix[:-1]][f_name]["z"]*z_index)+(self._json_dict[self._prefix[:-1]][f_name]["z"])/2.0)*self._metres_per_pixel*self._sizing[str(self._size_array[x_index][y_index])]) +" 0 -0 0"			
 							elif name == 'box':
-								keywords['pose'] = str(self.array_to_map(x_index,"x")) + " " + str(self.array_to_map(y_index,"y")) + " " + str(((self._json_dict[f_name]["z"]*z_index)+(self._json_dict[f_name]["z"])/2.0)*self._metres_per_pixel*self._sizing[str(self._size_array[x_index][y_index])]) +" 0 -0 0"
+								keywords['pose'] = str(self.array_to_map(x_index,"x")) + " " + str(self.array_to_map(y_index,"y")) + " " + str(((self._json_dict[self._prefix[:-1]][f_name]["z"]*z_index)+(self._json_dict[self._prefix[:-1]][f_name]["z"])/2.0)*self._metres_per_pixel*self._sizing[str(self._size_array[x_index][y_index])]) +" 0 -0 0"
 							
 							open(self._outputfile, "a")
 							with open(self._templates_folder+"{}.sdf".format(name)) as f:

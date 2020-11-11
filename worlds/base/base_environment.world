@@ -11897,5 +11897,11 @@
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
+    <plugin name='gazebo_occupancy_map' filename='libgazebo_2Dmap_plugin.so'>
+        <map_resolution>0.05</map_resolution> <!-- in meters, optional, default 0.1 -->
+	<map_height>0.3</map_height>         <!-- in meters, optional, default 0.3 -->
+	<map_size_x>64</map_size_x>          <!-- in meters, optional, default 10 -->
+	<map_size_y>64</map_size_y>          <!-- in meters, optional, default 10 -->
+    </plugin>
   </world>
 </sdf>

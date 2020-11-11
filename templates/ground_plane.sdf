@@ -1,4 +1,7 @@
 
+      <include>
+       <uri>model://ground_plane</uri>
+      </include> 
       <model name='ground_plane'>
         <pose frame=''>0 0 0 0 -0 0</pose>
         <link name='ground_plane'>
