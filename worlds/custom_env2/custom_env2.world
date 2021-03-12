@@ -593,7 +593,7 @@
       </link>
     </model>
     <model name='cylinder_0'>
-      <pose frame='sim_world'>-11.9740126312 -10.0399831863 0.15 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9525103878 -9.98168970104 0.15 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_0_link'>
         <inertial>
@@ -646,7 +646,7 @@
       </link>
     </model>
     <model name='cylinder_1'>
-      <pose frame='sim_world'>-11.9865231021 -10.0368102509 0.45 0 -0 0</pose>
+      <pose frame='sim_world'>-11.955569649 -9.98410720997 0.45 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_1_link'>
         <inertial>
@@ -699,7 +699,7 @@
       </link>
     </model>
     <model name='cylinder_2'>
-      <pose frame='sim_world'>-11.9735302571 -10.0361046452 0.75 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9487445343 -9.98618072448 0.75 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_2_link'>
         <inertial>
@@ -752,7 +752,7 @@
       </link>
     </model>
     <model name='cylinder_3'>
-      <pose frame='sim_world'>-11.9990644766 -9.51371495221 0.15 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9794393464 -9.48670227171 0.15 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_3_link'>
         <inertial>
@@ -805,7 +805,7 @@
       </link>
     </model>
     <model name='cylinder_4'>
-      <pose frame='sim_world'>-11.9849815326 -9.51371404176 0.45 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9937114675 -9.49800487609 0.45 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_4_link'>
         <inertial>
@@ -858,7 +858,7 @@
       </link>
     </model>
     <model name='cylinder_5'>
-      <pose frame='sim_world'>-12.0159623657 -8.95869355973 0.15 0 -0 0</pose>
+      <pose frame='sim_world'>-12.0331117108 -8.97277409759 0.15 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_5_link'>
         <inertial>

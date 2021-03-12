@@ -7,7 +7,32 @@ A node for generating and evolving gazebosim compatible worlds from pixel images
 The repository contains a ROS node called generate_environment which when running offered the services generate_world and evolve_world.
 
 These services require a config file to be passed and optionally can also be passed a map(image) to overwrite the image defined in the config file. This allows a generic config file to be applied to different maps.
-  
+
+## Example Generation
+
+Firstly watch the video in the media folder to get an understanding of what this repository is trying to do. It uses config files and coloured pixels to represent environments to generate. 
+
+If you have successfully downloaded this repository try launching the world file custom_env2.world, found the world/custom_env2/ folder. You should see very little other than the walls. If you compare this world to the custom_env2.tiff int he maps folder there are obviously items missing. This is due to worlds which use custom model requiring the models to either be hardcoded or on your systems gazebo model path. If you wish to use the gazbeo model path this will make specifying model locations easier but is not required and for the purposes of this example we shall simply hardcode the locations. 
+
+The first thing which need to be changed are these model locations. These can be found in config file /config/custom_env2.yaml. scroll down to file the definitions of the custom models and each models dae_location. They should start "/home/tom/ROS..... These need to be replaced with yourown file path. The files themselves exist in the meshes folder of this repository, or if you wish to use meshes from another location you can specify other locations too. 
+
+Once you have swapped out the file paths you shold be able to run the world builder. This is done by running:
+
+"rosrun gazebosim_world_generator generate_environment.py" 
+
+This will make a service called generate_world appear. 
+
+You can them call the service from your catkin_ws using:
+
+rosservice call /generate_world "map_file: 'src/gazebosim_world_generator/maps/custom_env2.tiff' 
+config_file: 'src/gazebosim_world_generator/config/custom_env2.yaml' "
+
+Specifying the location of the image you want to make into a world and its config file. 
+
+Once this service has run you should be able to open the world file in world/custom_env2/custom_env2.world and see an office scenario where some chairs and tables have been added, with chairs in two different orientations along with sound double high stacked bookcases.
+
+Feel free to mess with this world or any of the others provided to familirise youself with the basic world generation.
+
 
 ## Drawing a map
 
@@ -16,19 +41,19 @@ An example of how to draw the maps can be seen in the video in the media folder.
 * Walls are black
 * Cubes are red
 * Cylinders are blue
-* Custom models can now be specified with specific rgb colour codes **NB: See the challenge1 yaml file for how an example of how to use custom models**
+* Custom models can now be specified with specific rgb colour codes **NB: See the custom_env2 yaml file for how an example of how to use custom models**
 
-The green channel is reserved for generating none standard sized objects. This will be discussed in section Config File.
+The green channel for boxes and cylinders is reserved for generating none standard sized objects. This will be discussed in section Config File.
 
-One a world has been drawn, it needs to be saved as an image. I suggest using .tiff as it does not compress the image, which can cause issues further down the line with colour shifts. 
+Once a world has been drawn, it needs to be saved as an image. I suggest using .tiff as it does not compress the image, which can cause issues further down the line with colour shifts. 
 
-For examples of environemts see the maps folder.
+For examples of environments see the maps folder.
 
 ## The Config File
 
-Both Yaml and Json are now supported (Yaml is prefered).
+Both Yaml and Json are now supported (Yaml is best).
 
-A example config file can be found in the config folder. 
+A example config file can be found in the config folder, with custom_env2 being the most complete example showing all possibilities. 
 These files are used to layout all of the parameters which are needed for using the map builder.
 
 The required fields are needed for generating a base world. 
@@ -49,8 +74,9 @@ Similarly for sizing:
 would result in a scaling of the boxes or cylinders to to 1.0,0.25or 0.5 of the default values depending on the values. Here 255 custom values can be used with "0" always being the default size.
 
 
-For the heights and 
 ### Required settings
+
+All parameters should be inside of a tag which shares the name of the world to be generated. I suggest you look at the custom_env2.yaml file for reference. 
 
 key| sub-key | type | description
 ---| --- | --- | ---
@@ -81,7 +107,28 @@ key| sub-key | type | description
 **sizing**||dictionary|
 -|"value"|float|the colour value and it's related scaling factor
 
+#### Using custom models
+
+It is possible to use custom meshes within the world builder. To do this certain parameters need to be provided. They are as follows.
+
+key| sub-key | type | description
+---| --- | --- | ---
+**identifier**||string|A way of identifying a unique model/mesh
+**-**|name|string|the name of the mesh to be used for this model
+**-**|value| bgr value|bgr colour code which relates a pixel to this model
+**-**|z_offset|float|centre offset of the model, to stop models spawning in the floor
+**-**|rotation|float|radian angle of rotation of the model
+**-**|dae_location|string|filepath to model to use MUST BE HARDCODED
+**-**|pose_noise|float|If you would like the model to be moved slightly 
+**-**|stacking|int|(Optional) How many models high should be stacked
+**-**|height|float|(Optional) The vertical offset in metres each items shoudl be stacked at 
+
+To better understand the use of custom models, I suggest you look at the custom_env2.yaml file. Here you can see how the custom models have been implemented, and how the same mesh can be used with different colours to give different outputs. i.e. chair and chair_90, where the chairs default orientation has been changed.
+
 #### Additional settings
+
+#####Whilst still usable the radiation settings have been depreciated in favour of the radiation sensors/sources package, with the evolver due to also be overhauled.
+
 
 The additional settings relating to evolution used by evolve_world service. 
 
@@ -112,7 +159,11 @@ To generate the world from your config file and map please call:
 
 rosservice call rosservice call /generate_world "map_file: 'optional:location/of/map' config_file: 'required:location/of/config/file'" 
 
-The map file location can be passed in or pulled from the config file. The config file is required.
+The map file location can be passed in or pulled from the config file. 
+
+The config file is required! 
+
+If you wish to overwrite any of the option on a temporary basis rather than editing the config file, it can be done by changing the corrisponding element from the rosparam server. The easiest way to do this is to rosparam load the config yaml file into the param server, find the name of the parameter you wish to change using rosparam set and then call the service as normal. When running the service loads the passed in config file and then checks if any missing/altered params exist on the rosparam server.
 
 ### Evolve_world
 
@@ -120,9 +171,11 @@ To evolve the world from your config file and map please call:
 
 rosservice call rosservice call /evolve_world "map_file: 'optional:location/of/map' config_file: 'required:location/of/config/file'" 
 
-**Note that currently the radiation locations do not move with the barrels!!!! To be added**
+Inside the config files there are options under map_evolution which allow you to specify if models should be added or taken away to cause changed. This is currently being overhauled to be more useful.
 
-### Radiation mapper
+
+
+### Radiation mapper DEPRICICATED!!! USE THE RADIATION SENSORS AND SOURCES INSTEAD!!!
 
 If a radiation file is included in the config file. The generate_world service will also create a radiation.yaml file. Radiation maps must be the same size as the environment map to allow for relative locations radiation to match up with the physical world, The RGB channels of each pixel map to Alpha,Beta and Gamma values scaled by the radiation scaling parameter. This can then be loaded into the ros param server using the rosparam load function in ROS.
 
