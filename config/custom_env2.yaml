@@ -1,4 +1,4 @@
-custom_env: 
+custom_env2: 
   barrel_pos_noise: 0.5
   barrel_stacking_noise: 0.1
   box:
@@ -14,7 +14,7 @@ custom_env:
     '100': 1
     '180': 2
     '255': 3
-  input_map: src/gazebosim_world_generator/maps/custom_env.tiff
+  input_map: src/gazebosim_world_generator/maps/custom_env2.tiff
   map_centre:
     x: 32
     y: 32
@@ -24,9 +24,9 @@ custom_env:
     number_of_extra_barrels: 3
     number_of_extra_blocks: 2
   metres_per_pixel: 0.5
-  output_config_file_name: src/gazebosim_world_generator/worlds/custom_env/custom_env.yaml
-  output_filename: src/gazebosim_world_generator/worlds/custom_env/custom_env.world
-  output_map: src/gazebosim_world_generator/worlds/custom_env/custom_env.tiff
+  output_config_file_name: src/gazebosim_world_generator/worlds/custom_env2/custom_env2.yaml
+  output_filename: src/gazebosim_world_generator/worlds/custom_env2/custom_env2.world
+  output_map: src/gazebosim_world_generator/worlds/custom_env2/custom_env2.tiff
   radiation_map: None
   radiation_output_file_format: 0
   radiation_scaling: 1.0
@@ -48,8 +48,10 @@ custom_env:
       value: 200 200 200
       z_offset: 0.0
       rotation: 0
-      dae_location: "/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/eshes/bookshelf.dae"
+      dae_location: "/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/bookshelf.dae"
       pose_noise: 0.00      
+      stacking: 2
+      height: 2
     chair:
       name: chair
       value: 50 200 200
@@ -57,24 +59,30 @@ custom_env:
       rotation: 0
       dae_location: "/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/chair.dae"
       pose_noise: 0.00 
+      stacking: 1
+      height: 1
     chair_90:
       name: chair
       value: 100 200 200
       z_offset: 0.0
       rotation: 1.57
       dae_location: "/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/chair.dae"
-      pose_noise: 0.00      
+      pose_noise: 0.00    
+      stacking: 1  
+      height: 1
     desk:
       name: desk
       value: 200 50 200
       z_offset: 0.0
       rotation: 0
       dae_location: "/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/desk.dae"
-      pose_noise: 0.00      
+      pose_noise: 0.00     
+
     table:
       name: table
       value: 200 200 50
       z_offset: 0.0
       rotation: 0
       dae_location: "/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/table.dae"
-      pose_noise: 0.00      
+      pose_noise: 0.00   
+

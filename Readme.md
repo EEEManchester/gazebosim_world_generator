@@ -7,11 +7,6 @@ A node for generating and evolving gazebosim compatible worlds from pixel images
 The repository contains a ROS node called generate_environment which when running offered the services generate_world and evolve_world.
 
 These services require a config file to be passed and optionally can also be passed a map(image) to overwrite the image defined in the config file. This allows a generic config file to be applied to different maps.
-
-#### Recent updateds
-
-* Custom dae models can now be used!!!
-* Fixed issue with loading variables from the param server
   
 
 ## Drawing a map
@@ -31,7 +26,7 @@ For examples of environemts see the maps folder.
 
 ## The Config File
 
-Both Yaml and Json are now supported.
+Both Yaml and Json are now supported (Yaml is prefered).
 
 A example config file can be found in the config folder. 
 These files are used to layout all of the parameters which are needed for using the map builder.
@@ -137,8 +132,4 @@ A launch file for loading a clearpath jackle with lidar and the base environment
 
 ## ToDo
 
-* Remove all of the hardcoding of variables
 * Tidy up config file to have output folder and then filenames rather than having to constantly repeat text
-* Make radiation location update with barrels
-
-
