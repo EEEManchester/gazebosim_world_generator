@@ -41,7 +41,7 @@ class Environment(object):
 		#print self._input_map_name
 
 		self._img = cv2.imread(self._input_map_name, cv2.IMREAD_UNCHANGED)
-		print self._output_map_name
+		#print self._output_map_name
 		cv2.imwrite(self._output_map_name, self._img)
 
 		#if (self._input_rad_map_name != None):
