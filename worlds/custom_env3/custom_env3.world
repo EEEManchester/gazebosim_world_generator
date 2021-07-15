@@ -593,7 +593,7 @@
       </link>
     </model>
     <model name='cylinder_0'>
-      <pose frame='sim_world'>-12.0091966503 -10.0414442459 0.15 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9696069073 -10.044753982 0.15 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_0_link'>
         <inertial>
@@ -646,7 +646,7 @@
       </link>
     </model>
     <model name='cylinder_1'>
-      <pose frame='sim_world'>-12.0134333142 -10.0453391628 0.45 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9589823271 -10.0349172031 0.45 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_1_link'>
         <inertial>
@@ -699,7 +699,7 @@
       </link>
     </model>
     <model name='cylinder_2'>
-      <pose frame='sim_world'>-12.0101563008 -10.0502762545 0.75 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9657817304 -10.0372251532 0.75 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_2_link'>
         <inertial>
@@ -752,7 +752,7 @@
       </link>
     </model>
     <model name='cylinder_3'>
-      <pose frame='sim_world'>-12.0463105562 -9.46418682876 0.15 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9970596544 -9.54814741846 0.15 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_3_link'>
         <inertial>
@@ -805,7 +805,7 @@
       </link>
     </model>
     <model name='cylinder_4'>
-      <pose frame='sim_world'>-12.0533293177 -9.47051332555 0.45 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9944486405 -9.53550633875 0.45 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_4_link'>
         <inertial>
@@ -858,7 +858,7 @@
       </link>
     </model>
     <model name='cylinder_5'>
-      <pose frame='sim_world'>-12.0355786322 -9.05477095294 0.15 0 -0 0</pose>
+      <pose frame='sim_world'>-11.9462256939 -8.99295501976 0.15 0 -0 0</pose>
       <static>True</static>
       <link name='cylinder_5_link'>
         <inertial>
@@ -1046,25 +1046,46 @@
     </link>
   </model>
 
-  <model name="bookshelf_8">
-    <pose>-9.5 -0.5 0.0 0 -0 0.0</pose>
-    <static>true</static>
-    <link name="link_bookshelf_8">
-      <collision name="collision_bookshelf_8">
+<model name="source_8">
+<pose>-9.5 -4.5 0.2 0 -0 0.0</pose>
+<static>true</static>
+<link name="link_source_8">
+    <pose>0.0 0 0 0 0 0</pose>
+    <visual name="visual_source_8">
+        <pose> 0 0 0.0 0 0 0</pose>
         <geometry>
-          <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/bookshelf.dae</uri></mesh>
+            <box>
+            <size>0.1 0.1 0.1</size>
+            </box>
         </geometry>
-      </collision>
-      <visual name="visual_bookshelf_8">
+        <material>
+            <ambient>1 0.0  0 1.0</ambient>
+            <diffuse>1 0.0  0 1.0</diffuse>
+        </material>
+        </visual>
+        <visual name="visual_source_8_1">
+        <pose> 0 0 2.0 0 0 0</pose>
         <geometry>
-          <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/bookshelf.dae</uri></mesh>
+            <box>
+            <size>0.1 0.1 0.1</size>
+            </box>
         </geometry>
-      </visual>
-    </link>
-  </model>
+        <material>
+            <ambient>0 1.0  0 1.0</ambient>
+            <diffuse>0 1.0  0 1.0</diffuse>
+        </material>
+    </visual>
+    <sensor name="source_8" type="radiation_source">
+    <always_on> 1 </always_on>
+    <update_rate> 100.0 </update_rate>
+    <topic>source_8_0/gamma</topic>
+    <plugin filename="libradiation_source_plugin.so" name="radiation_source_plugin" />
 
+    </sensor>
+</link>
+</model>
   <model name="bookshelf_9">
-    <pose>-9.5 -0.5 2.0 0 -0 0.0</pose>
+    <pose>-9.5 -0.5 0.0 0 -0 0.0</pose>
     <static>true</static>
     <link name="link_bookshelf_9">
       <collision name="collision_bookshelf_9">
@@ -1080,16 +1101,33 @@
     </link>
   </model>
 
-  <model name="chair_10">
+  <model name="bookshelf_10">
+    <pose>-9.5 -0.5 2.0 0 -0 0.0</pose>
+    <static>true</static>
+    <link name="link_bookshelf_10">
+      <collision name="collision_bookshelf_10">
+        <geometry>
+          <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/bookshelf.dae</uri></mesh>
+        </geometry>
+      </collision>
+      <visual name="visual_bookshelf_10">
+        <geometry>
+          <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/bookshelf.dae</uri></mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+
+  <model name="chair_11">
     <pose>-9.0 -3.0 0.0 0 -0 1.57</pose>
     <static>true</static>
-    <link name="link_chair_10">
-      <collision name="collision_chair_10">
+    <link name="link_chair_11">
+      <collision name="collision_chair_11">
         <geometry>
           <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/chair.dae</uri></mesh>
         </geometry>
       </collision>
-      <visual name="visual_chair_10">
+      <visual name="visual_chair_11">
         <geometry>
           <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/chair.dae</uri></mesh>
         </geometry>
@@ -1097,16 +1135,54 @@
     </link>
   </model>
 
-  <model name="table_11">
+<model name="source_12">
+<pose>-6.0 -9.5 0.2 0 -0 0.0</pose>
+<static>true</static>
+<link name="link_source_12">
+    <pose>0.0 0 0 0 0 0</pose>
+    <visual name="visual_source_12">
+        <pose> 0 0 0.0 0 0 0</pose>
+        <geometry>
+            <box>
+            <size>0.1 0.1 0.1</size>
+            </box>
+        </geometry>
+        <material>
+            <ambient>1 0.0  0 1.0</ambient>
+            <diffuse>1 0.0  0 1.0</diffuse>
+        </material>
+        </visual>
+        <visual name="visual_source_12_1">
+        <pose> 0 0 2.0 0 0 0</pose>
+        <geometry>
+            <box>
+            <size>0.1 0.1 0.1</size>
+            </box>
+        </geometry>
+        <material>
+            <ambient>0 1.0  0 1.0</ambient>
+            <diffuse>0 1.0  0 1.0</diffuse>
+        </material>
+    </visual>
+    <sensor name="source_12" type="radiation_source">
+    <always_on> 1 </always_on>
+    <update_rate> 100.0 </update_rate>
+    <topic>source_12_0/gamma</topic>
+    <plugin filename="libradiation_source_plugin.so" name="radiation_source_plugin" />
+
+    </sensor>
+</link>
+</model>
+  <model name="table_13">
     <pose>-6.0 -7.5 0.0 0 -0 0.0</pose>
     <static>true</static>
-    <link name="link_table_11">
-      <collision name="collision_table_11">
+    <link name="link_table_13">
+      <collision name="collision_table_13">
         <geometry>
           <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/table.dae</uri></mesh>
         </geometry>
       </collision>
-      <visual name="visual_table_11">
+      <visual name="visual_table_13">
         <geometry>
           <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/table.dae</uri></mesh>
         </geometry>
@@ -1114,16 +1190,16 @@
     </link>
   </model>
 
-  <model name="table_12">
+  <model name="table_14">
     <pose>-6.0 -2.5 0.0 0 -0 0.0</pose>
     <static>true</static>
-    <link name="link_table_12">
-      <collision name="collision_table_12">
+    <link name="link_table_14">
+      <collision name="collision_table_14">
         <geometry>
           <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/table.dae</uri></mesh>
         </geometry>
       </collision>
-      <visual name="visual_table_12">
+      <visual name="visual_table_14">
         <geometry>
           <mesh><uri>/home/tom/ROS/Oxford/catkin_ws/src/gazebosim_world_generator/meshes/table.dae</uri></mesh>
         </geometry>
@@ -1131,6 +1207,44 @@
     </link>
   </model>
 
+<model name="source_15">
+<pose>-5.0 -0.5 0.2 0 -0 0.0</pose>
+<static>true</static>
+<link name="link_source_15">
+    <pose>0.0 0 0 0 0 0</pose>
+    <visual name="visual_source_15">
+        <pose> 0 0 0.0 0 0 0</pose>
+        <geometry>
+            <box>
+            <size>0.1 0.1 0.1</size>
+            </box>
+        </geometry>
+        <material>
+            <ambient>1 0.0  0 1.0</ambient>
+            <diffuse>1 0.0  0 1.0</diffuse>
+        </material>
+        </visual>
+        <visual name="visual_source_15_1">
+        <pose> 0 0 2.0 0 0 0</pose>
+        <geometry>
+            <box>
+            <size>0.1 0.1 0.1</size>
+            </box>
+        </geometry>
+        <material>
+            <ambient>0 1.0  0 1.0</ambient>
+            <diffuse>0 1.0  0 1.0</diffuse>
+        </material>
+    </visual>
+    <sensor name="source_15" type="radiation_source">
+    <always_on> 1 </always_on>
+    <update_rate> 100.0 </update_rate>
+    <topic>source_15_0/gamma</topic>
+    <plugin filename="libradiation_source_plugin.so" name="radiation_source_plugin" />
+
+    </sensor>
+</link>
+</model>
 
       <include>
        <uri>model://ground_plane</uri>
